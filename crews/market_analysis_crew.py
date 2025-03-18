@@ -7,6 +7,9 @@ from pydantic import Field
 import json
 import os
 from crewai_tools import QdrantVectorSearchTool
+from dotenv import load_dotenv
+
+load_dotenv()
 
 os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
 os.environ["SERPER_API_KEY"] = os.getenv("SERPER_API_KEY")
