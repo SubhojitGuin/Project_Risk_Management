@@ -1,7 +1,6 @@
 
 from crewai import Agent, Crew, Process, Task
 from crewai_tools import SerperDevTool
-from crewai.project import CrewBase, agent, crew, task
 from langchain_community.utilities import GoogleSerperAPIWrapper
 from crewai.tools import BaseTool
 from pydantic import Field
@@ -12,7 +11,6 @@ os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
 os.environ["SERPER_API_KEY"] = os.getenv("SERPER_API_KEY")
 
 # -- Chat Model --
-
 search = GoogleSerperAPIWrapper()
 
 class SearchTool(BaseTool):
@@ -28,13 +26,10 @@ class SearchTool(BaseTool):
             return f"Error performing search: {str(e)}"
 
 # Create Agents
-research_agent = Agent(
-    role='Research Analyst',
+market_research_agent = Agent(
+    role='Market Research Analyst',
     goal='Gather current market data and trends',
-    backstory="""You are an expert research analyst with years of experience in
-    gathering latest market finance trends, stocks and forex. You're known for your ability to find
-    relevant and up-to-date market information and present it in a clear,
-    actionable format.""",
+    backstory="""You are an expert research analyst with years of experience in gathering latest market finance trends, stocks and forex. You're known for your ability to find relevant and up-to-date market information and present it in a clear, actionable format.""",
     # tools=[SearchTool()],
     verbose=True
 )
@@ -51,31 +46,33 @@ research_agent = Agent(
 task = Task(
     description='Find the latest market news on {topic}',
     expected_output='A bullet list summary of the top 5 most important news based on the {topic} .',
-    agent=  research_agent,
-    tools=[SearchTool()],
+    agent=market_research_agent,
+    tools=[SerperDevTool()],
     verbose=True
 )
 
 # Execute the crew
-crew = Crew(
-    agents=[research_agent],
-    tasks=[task],
-    process=Process.sequential,
-    verbose=True
-)
+def return_market_analysis_crew():
+    return Crew(
+        agents=[market_research_agent],
+        tasks=[task],
+        process=Process.sequential,
+        verbose=True
+    )
 
-crew_output = crew.kickoff(inputs = {'topic': 'Latest Market news on stocks market , crypto ,forex and exchange rates of India'})
 
-# Accessing the task output
-task_output = task.output
+# crew_output = crew.kickoff(inputs = {'topic': 'Latest Market news on stocks market , crypto ,forex and exchange rates of India'})
 
-print(f"Task Description: {task_output.description}")
-print(f"Task Summary: {task_output.summary}")
-print(f"Raw Output: {task_output.raw}")
-if task_output.json_dict:
-    print(f"JSON Output: {json.dumps(task_output.json_dict, indent=2)}")
-if task_output.pydantic:
-    print(f"Pydantic Output: {task_output.pydantic}")
+# # Accessing the task output
+# task_output = task.output
+
+# print(f"Task Description: {task_output.description}")
+# print(f"Task Summary: {task_output.summary}")
+# print(f"Raw Output: {task_output.raw}")
+# if task_output.json_dict:
+#     print(f"JSON Output: {json.dumps(task_output.json_dict, indent=2)}")
+# if task_output.pydantic:
+#     print(f"Pydantic Output: {task_output.pydantic}")
 
 # print(f"Raw Output: {crew_output.raw}")
 # if crew_output.json_dict:
