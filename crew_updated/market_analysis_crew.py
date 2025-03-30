@@ -19,7 +19,7 @@ class Result(BaseModel):
 class Results(BaseModel):
     category: str
     category_description: str
-    results: list[Result]
+    data: list[Result]
     
 class ResultList(BaseModel):
     results: list[Results]
