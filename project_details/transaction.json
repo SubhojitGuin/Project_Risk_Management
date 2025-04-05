@@ -1,0 +1,121 @@
+{
+  "report_metadata": {
+    "project_id": "PRJ-SEC-002",
+    "project_name": "Prevention of Data Poisoning Attacks in Federated Learning",
+    "reporting_period": "2025-Q1",
+    "prepared_by": "Project Finance Team",
+    "report_date": "2025-04-05",
+    "currency": "USD",
+    "exchange_rate_volatility_flag": false
+  },
+  "financial_summary": {
+    "budget": {
+      "total_budget": 2000000,
+      "current_spend": 1350000,
+      "remaining_budget": 650000,
+      "estimated_final_spend": 2150000,
+      "budget_variance": 150000,
+      "overrun_risk_rating": "High"
+    },
+    "liabilities": {
+      "current_liabilities": 290000,
+      "long_term_liabilities": 0,
+      "overdue_payables": 3,
+      "overdue_amount": 120000,
+      "credit_exposure": {
+        "limit": 150000,
+        "utilized": 110000,
+        "percent_utilized": 73.3
+      },
+      "delayed_payment_flag": true
+    },
+    "assets": {
+      "total_asset_value": 610000,
+      "net_assets": 320000,
+      "fixed_assets": 430000,
+      "liquid_assets": 180000
+    },
+    "cash_flow": {
+      "opening_balance": 210000,
+      "cash_inflows": {
+          "client_payments": 340000,
+          "grants_received": 50000,
+          "other_income": 15000,
+          "total_inflows": 405000
+      },
+      "cash_outflows": {
+          "operational_costs": 230000,
+          "salaries_and_wages": 95000,
+          "infrastructure_spending": 70000,
+          "miscellaneous": 10000,
+          "total_outflows": 405000
+      },
+      "net_cash_flow": 0,
+      "closing_balance": 210000,
+      "cash_flow_projection_next_quarter": {
+          "projected_inflows": 420000,
+          "projected_outflows": 390000,
+          "expected_net_cash_flow": 30000
+      }
+    }
+  },
+  "risk_analysis": {
+    "summary": {
+      "overall_risk_rating": "High",
+      "risk_compliance_status": "Needs Attention"
+    },
+    "transactional_risks": {
+      "anomalies_detected": 5,
+      "duplicate_transactions": 2,
+      "suspicious_transactions": 4,
+      "manual_override_count": 4,
+      "invoice_po_mismatch_ratio": 0.18
+    },
+    "vendor_risk": {
+      "total_vendors": 12,
+      "high_risk_vendors": 3,
+      "vendor_compliance_issues": [
+        "Late Deliverables",
+        "Invoice Discrepancies"
+      ],
+      "performance_risk_rating": "Medium"
+    },
+    "audit_and_compliance": {
+      "last_audit_date": "2025-03-22",
+      "audit_issues_count": 3,
+      "compliance_issues": [
+        "Unjustified hardware purchases",
+        "Unapproved vendor invoicing"
+      ],
+      "next_audit_scheduled": "2025-06-20"
+    },
+    "operational_risks": {
+      "resource_turnover_percent": 12.5,
+      "resource_availability_risk": "Medium",
+      "cloud_cost_risk": {
+        "monthly_spend": 16000,
+        "exceeds_threshold": true
+      }
+    },
+    "fraud_indicators": {
+      "multi_payments_same_account": true,
+      "unexplained_fund_flows": 47000,
+      "invoice_approval_bypasses": 3
+    }
+  },
+  "forecasting": {
+    "estimated_completion_date": "2025-12-28",
+    "monthly_burn_rate_estimate": 100000,
+    "schedule_variance_days": 8,
+    "cost_variance_dollar": 150000
+  },
+  "controls_recommendations": {
+    "actions_required": [
+      "Conduct vendor risk re-evaluation",
+      "Flag and freeze suspicious accounts",
+      "Enforce stricter PO-invoice match validation",
+      "Accelerate payment approval workflows"
+    ],
+    "next_review_date": "2025-05-01"
+  }
+}

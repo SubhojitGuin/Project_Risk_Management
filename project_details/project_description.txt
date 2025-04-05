@@ -1,0 +1,7 @@
+Title : Prevention of Data Poisoning Attacks in Federated Learning
+Location : London, United Kingdom
+Description : This is a Federated Learning Project based on Client Server Architecture, to prevent Data Poisoning Attacks using Detection Algorithms for Filtering Poisonous Clients.
+Duration : 6 Months
+Start Date : February, 2025
+Domain : Machine Learning, Deep Learning, Distributed Systems
+Resources : 10 NVIDIA RTX PRO 6000 Blackwell Workstation Edition, 128 GB RAM , 1.5TB Storage, Dell Intel Xeon Platinum 8270 2.7GHz Twenty Six Core Processor

@@ -70,7 +70,7 @@ class MarketAnalysis:
                 - A timeline of key events and trends related to each risk factors with month and year 
                 - A summary of the potential business risks and opportunities associated with each factor
             """,
-            output_file="static_db/market_analysis_summary.json",
+            output_file="project_detailsb/market_analysis_summary.json",
             agent=self.agent(),
             tools=[SerperDevTool()],
             output_json=ResultList,

@@ -1,0 +1,51 @@
+{
+    "risk_evaluation_rules": {
+        "integrity_and_anomalies": {
+            "duplicate_transactions_threshold": 2,
+            "outlier_detection_threshold": 5,
+            "invoice_mismatch_ratio_threshold": 0.1
+        },
+        "compliance": {
+            "policy_violations_threshold": 3,
+            "manual_overrides_threshold": 2,
+            "approval_bypasses_threshold": 1
+        },
+        "fraud_risk": {
+            "multiple_payments_same_account": true,
+            "unusual_fund_flows_threshold": 10000.0,
+            "unjustified_transactions_threshold": 3
+        },
+        "vendor_risk": {
+            "high_dependency_vendors_threshold": 2,
+            "vendor_performance_issues": [
+                "Late Deliverables",
+                "Invoice Discrepancies"
+            ],
+            "vendor_compliance_flags": [
+                "Non-compliance with SLAs",
+                "Regulatory Violations"
+            ]
+        },
+        "financial_exposure": {
+            "budget_variance_threshold": 0.2,
+            "overdue_payments_threshold": 3,
+            "credit_exposure_threshold": 0.3,
+            "spend_over_authorization": true
+        },
+        "operational_risk": {
+            "timeline_impact_days_threshold": 10,
+            "resource_risk_percent_threshold": 0.2,
+            "high_cloud_spend_flag": true
+        },
+        "audit_and_traceability": {
+            "audit_trail_completeness_threshold": 90.0,
+            "last_audit_findings_critical_threshold": 2,
+            "mitigation_actions_pending_threshold": 3
+        },
+        "quantitative_score": {
+            "low_risk_score_range": [0, 33],
+            "medium_risk_score_range": [34, 66],
+            "high_risk_score_range": [67, 100]
+        }
+    }
+}
