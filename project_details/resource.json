@@ -1,0 +1,264 @@
+{
+    "metadata": {
+      "report_generated_on": "2025-04-06",
+      "report_generated_by": "Resource Risk Analysis Agent",
+      "report_version": "2.1"
+    },
+    "project_info": {
+      "project_id": "PRJ-IT-2025-034",
+      "project_name": "Cloud-native Microservices Migration",
+      "department": "Enterprise IT",
+      "risk_assessment_date": "2025-04-06"
+    },
+    "resources": {
+      "human_resources": {
+        "total_assigned": 60,
+        "available": 55,
+        "required": 70,
+        "shortage": 15,
+        "resignations_last_30_days": 3,
+        "resignation_rate_percent": 5.0,
+        "utilization_rate": 92,
+        "turnover_risk_percent": 14.5,
+        "roles": ["developers", "engineers", "technicians", "support_staff"],
+        "roles_in_use": ["developers", "engineers"],
+        "roles_idle": ["technicians", "support_staff"],
+        "skill_gap": ["Kubernetes", "GraphQL"],
+        "risk_severity": "High",
+        "impact_score": 8.0,
+        "probability_score": 0.7,
+        "risk_exposure": 5.6,
+        "sla_impact": true,
+        "recovery_time_days": 21,
+        "compliance_risk": false,
+        "issues": [],
+        "mitigation_plan": "Hire contractors; initiate skill development programs"
+      },
+      "hardware_resources": {
+        "servers": {
+          "total": 60,
+          "in_use": 55,
+          "available": 5,
+          "utilization_rate": 91.6,
+          "shortage": 10,
+          "risk_severity": "High",
+          "impact_score": 8.5,
+          "probability_score": 0.75,
+          "risk_exposure": 6.38,
+          "sla_impact": true,
+          "recovery_time_days": 10,
+          "compliance_risk": false,
+          "issues": [
+            "4 servers overheating intermittently",
+            "2 servers nearing end-of-life with no replacement budgeted"
+          ],
+          "mitigation_plan": "Procure 10 new servers; schedule phased decommissioning of legacy units"
+        },
+        "workstations": {
+          "total": 120,
+          "in_use": 110,
+          "available": 10,
+          "shortage": 5,
+          "risk_severity": "Medium",
+          "impact_score": 5.0,
+          "probability_score": 0.6,
+          "risk_exposure": 3.0,
+          "sla_impact": false,
+          "recovery_time_days": 5,
+          "compliance_risk": false,
+          "issues": ["10 workstations pending OS patching"],
+          "mitigation_plan": "Schedule patch rollouts during non-business hours"
+        },
+        "cpu": {
+          "total_cores": 1024,
+          "in_use_cores": 950,
+          "available_cores": 74,
+          "utilization_rate": 92.8,
+          "shortage_cores": 100,
+          "overloaded_cores_percent": 12,
+          "risk_severity": "High",
+          "impact_score": 8.2,
+          "probability_score": 0.78,
+          "risk_exposure": 6.4,
+          "sla_impact": true,
+          "recovery_time_days": 8,
+          "compliance_risk": false,
+          "issues": ["Sustained CPU load >90% on 15% of cores"],
+          "mitigation_plan": "Load-balance workloads; upgrade CPUs on critical nodes"
+        },
+        "gpu": {
+          "total_units": 40,
+          "in_use_units": 38,
+          "available_units": 2,
+          "shortage_units": 5,
+          "utilization_rate": 95,
+          "overloaded_units_percent": 20,
+          "risk_severity": "Critical",
+          "impact_score": 9.0,
+          "probability_score": 0.85,
+          "risk_exposure": 7.65,
+          "sla_impact": true,
+          "recovery_time_days": 12,
+          "compliance_risk": true,
+          "issues": [
+            "Deep learning workloads saturating current GPU clusters",
+            "Two units flagged for thermal throttling"
+          ],
+          "mitigation_plan": "Expand GPU cluster; lease cloud-based GPU acceleration temporarily"
+        }
+      },
+      "cloud_resources": {
+        "AWS": {
+          "compute": {
+            "instance_type": "t3.large",
+            "total_instances": 200,
+            "in_use": 195,
+            "shortage": 25,
+            "utilization_rate": 97.5,
+            "monthly_cost_usd": 18000,
+            "budget_threshold_usd": 15000,
+            "cost_exceeds_threshold": true,
+            "risk_severity": "Critical",
+            "impact_score": 9.5,
+            "probability_score": 0.9,
+            "risk_exposure": 8.55,
+            "sla_impact": true,
+            "recovery_time_days": 14,
+            "compliance_risk": true,
+            "mitigation_plan": "Convert to reserved instances; auto-scale limits; budget reallocation"
+          },
+          "storage": {
+            "used_capacity_tb": 480,
+            "available_tb": 20,
+            "shortage_tb": 80,
+            "utilization_rate": 96,
+            "risk_severity": "High",
+            "impact_score": 8.0,
+            "probability_score": 0.8,
+            "risk_exposure": 6.4,
+            "sla_impact": true,
+            "recovery_time_days": 7,
+            "compliance_risk": true,
+            "mitigation_plan": "Archive old data; request capacity extension; enable lifecycle policies"
+          }
+        },
+        "Azure": {
+          "virtual_machines": {
+            "total": 8,
+            "in_use": 6,
+            "shortage": 2,
+            "utilization_rate": 75,
+            "risk_severity": "Medium",
+            "sla_impact": false,
+            "issues": [],
+            "mitigation_plan": "Scale up virtual machines as needed"
+          },
+          "storage": {
+            "used_capacity_tb": 12,
+            "available_tb": 3,
+            "shortage_tb": 3,
+            "utilization_rate": 80,
+            "sla_impact": false,
+            "issues": [],
+            "mitigation_plan": "Monitor capacity and apply retention policies"
+          }
+        },
+        "Google Cloud": {
+          "compute_engines": {
+            "total": 5,
+            "in_use": 4,
+            "shortage": 1,
+            "utilization_rate": 80,
+            "sla_impact": false,
+            "issues": [],
+            "mitigation_plan": "Optimize workloads to reduce instance count"
+          },
+          "storage": {
+            "used_capacity_tb": 8,
+            "available_tb": 2,
+            "shortage_tb": 2,
+            "utilization_rate": 80,
+            "sla_impact": false,
+            "issues": [],
+            "mitigation_plan": "Enable cold storage archiving"
+          }
+        }
+      },
+      "software_resources": {
+        "tools": ["Jira", "Docker", "IntelliJ"],
+        "licenses_total": 300,
+        "in_use": 290,
+        "available": 10,
+        "shortage": 20,
+        "licenses_expiring_soon": 18,
+        "risk_severity": "Medium",
+        "impact_score": 4.0,
+        "probability_score": 0.5,
+        "risk_exposure": 2.0,
+        "sla_impact": false,
+        "recovery_time_days": 3,
+        "compliance_risk": true,
+        "mitigation_plan": "Renew expiring licenses; monitor license assignment"
+      },
+      "database_resources": {
+        "production": {
+            "type": "PostgreSQL",
+            "total_instances": 6,
+            "in_use": 6,
+            "available": 0,
+            "shortage": 2,
+            "utilization_rate": 98,
+            "average_query_latency_ms": 180,
+            "issues": [
+            "High read/write contention during peak hours",
+            "Autovacuum not running optimally"
+            ],
+            "risk_severity": "High",
+            "impact_score": 8.5,
+            "probability_score": 0.82,
+            "risk_exposure": 6.97,
+            "sla_impact": true,
+            "compliance_risk": true,
+            "recovery_time_days": 6,
+            "mitigation_plan": "Optimize query patterns; scale read replicas; tune autovacuum settings"
+        }
+     }  
+    },
+    "summary": {
+      "overall_risk_rating": "High",
+      "top_risks_by_exposure": [
+        {
+          "resource": "AWS Compute",
+          "risk_exposure": 8.55
+        },
+        {
+          "resource": "GPU Units",
+          "risk_exposure": 7.65
+        },
+        {
+          "resource": "AWS Storage",
+          "risk_exposure": 6.4
+        },
+        {
+          "resource": "Server Infrastructure",
+          "risk_exposure": 6.38
+        },
+        {
+          "resource": "CPU Cores",
+          "risk_exposure": 6.4
+        },
+        {
+          "resource": "Developers",
+          "risk_exposure": 5.6
+        }
+      ],
+      "recommendations": [
+        "Expand GPU and CPU capacity immediately",
+        "Shift AI training jobs to cloud GPUs where possible",
+        "Review developer resignations and fill urgent roles",
+        "Prioritize AWS reserved instances for compute",
+        "Trigger hardware procurement for legacy server replacements"
+      ],
+      "next_review_date": "2025-05-01"
+    }
+  }

@@ -1,12 +1,8 @@
 from crewai import Agent, Crew, Task, Process, LLM
 from crewai.project import CrewBase, agent, task, crew
-from datetime import datetime
-from pydantic import BaseModel
 import os
 from dotenv import load_dotenv
-from typing import Any, List
 import json
-from datetime import date
 load_dotenv()
 
 os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
@@ -131,7 +127,7 @@ class TransactionRiskAnalysisCrew:
             Do not include the markdown symbols in the output. The report should be structured and easy to read, with clear headings and subheadings for each section. Use bullet points or numbered lists where appropriate to enhance readability.
            
             """,
-            output_file="project_details/transaction_risk_analysis.txt",
+            output_file="output/transaction_risk_analysis.txt",
             agent=self.agent(),
             # output_json=TransactionRiskAnalysisReport,
             verbose=True
@@ -149,23 +145,24 @@ class TransactionRiskAnalysisCrew:
         )
     
 if __name__ == "__main__":
-    with open("project_details/transaction.json", "r") as f:
+    with open("project_details/resource.json", "r") as f:
         transaction_records = json.load(f)
     with open("project_details/static_rules.json", "r") as f:
         static_records = json.load(f)
+        static_records = static_records["transaction_rules"]
     with open("project_details/market_analysis_summary.json", "r") as f:
         market_records = json.load(f)
     TransactionRiskAnalysisCrew().crew().kickoff({"transaction_records": transaction_records, "static_records": static_records, "market_records": market_records})
 
 
-    #  A structured txt report containing:
-            # 1. Integrity and Anomalies
-            # 2. Compliance Risk
-            # 3. Fraud Risk
-            # 4. Vendor Risk
-            # 5. Financial Exposure
-            # 6. Operational Risk
-            # 7. Audit and Traceability
-            # 8. Quantitative Score
-            # 9. Categorization
-            # 10. Summary of Findings and Recommendations
+#  A structured txt report containing:
+    # 1. Integrity and Anomalies
+    # 2. Compliance Risk
+    # 3. Fraud Risk
+    # 4. Vendor Risk
+    # 5. Financial Exposure
+    # 6. Operational Risk
+    # 7. Audit and Traceability
+    # 8. Quantitative Score
+    # 9. Categorization
+    # 10. Summary of Findings and Recommendations

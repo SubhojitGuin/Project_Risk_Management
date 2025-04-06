@@ -1,0 +1,236 @@
+{
+  "project_id": "PRJ-2025-001",
+  "project_name": "Enterprise Resource Management System",
+  "project_description": "Development and deployment of an ERM platform to automate and streamline HR, Finance, and Logistics processes across global business units.",
+  "project_domain": "Enterprise SaaS",
+  "project_type": "Agile (Scrum)",
+  "project_model": "Hybrid - Fixed Scope + T&M",
+  "project_base_location": "Bangalore, India",
+  "delivery_locations": ["Bangalore", "Pune", "Remote"],
+  "start_date": "2024-11-15",
+  "planned_end_date": "2025-08-30",
+  "revised_end_date": "2025-09-15",
+  "timeline_months": 10,
+  "current_phase": "Execution",
+  "team": {
+    "total_members": 18,
+    "roles": {
+      "frontend_devs": 3,
+      "backend_devs": 5,
+      "qa_engineers": 4,
+      "devops": 2,
+      "ui_ux": 1,
+      "business_analysts": 1,
+      "project_manager": 1,
+      "scrum_master": 1
+    },
+    "attrition_risk": "Medium",
+    "key_personnel_resignation": [
+      {
+        "name": "Karan P.",
+        "role": "Backend Developer",
+        "last_day": "2025-04-15",
+        "replacement_planned": true
+      }
+    ]
+  },
+  "milestones": {
+    "achieved": [
+      {
+        "name": "Requirement Analysis",
+        "date": "2024-12-05"
+      },
+      {
+        "name": "Design Finalization",
+        "date": "2025-01-10"
+      },
+      {
+        "name": "Core HR Module Release",
+        "date": "2025-03-01"
+      }
+    ],
+    "missed": [
+      {
+        "name": "Finance Module Delivery",
+        "original_date": "2025-03-15",
+        "actual_date": "2025-03-30",
+        "reason": "Legacy system integration delay"
+      }
+    ],
+    "nearing": [
+      {
+        "name": "Logistics Module Beta",
+        "due_date": "2025-04-20",
+        "status": "In Progress",
+        "risk_flag": "Medium"
+      }
+    ]
+  },
+  "epic_status": {
+    "total_epics": 10,
+    "completed": 5,
+    "in_progress": 3,
+    "delayed": 2
+  },
+  "schedule_delay": {
+    "epics": [
+      {
+        "name": "Finance Integration",
+        "delay_in_days": 15,
+        "reason": "Compliance updates from third-party APIs"
+      }
+    ],
+    "sprints": [
+      {
+        "sprint_id": "SPR-07",
+        "delay_in_days": 5,
+        "reason": "Unrefined user stories and dependencies"
+      }
+    ],
+    "tasks": [
+      {
+        "task_id": "T-1045",
+        "description": "Payroll Service Testing",
+        "delay_in_days": 3,
+        "dependency_blocked": true
+      }
+    ]
+  },
+  "sprint_metrics": {
+    "sprint_velocity": {
+      "average_story_points": 42,
+      "target_velocity": 50,
+      "velocity_trend": "Stable"
+    },
+    "sprint_backlog": [
+      {
+        "sprint_id": "SPR-09",
+        "start_date": "2025-04-01",
+        "end_date": "2025-04-14",
+        "planned_story_points": 48,
+        "completed_story_points": 38,
+        "spillover_story_points": 10
+      }
+    ],
+    "retrospective_summary": {
+      "last_sprint": "SPR-08",
+      "positives": [
+        "Improved QA collaboration",
+        "Faster deployment with CI/CD"
+      ],
+      "negatives": [
+        "Underestimated backlog effort",
+        "Downtime in QA environment"
+      ],
+      "action_items": [
+        "Include domain SME in grooming",
+        "Set up stable sandbox testing infra"
+      ]
+    }
+  },
+  "budget": {
+    "initial_budget_usd": 450000,
+    "utilized_budget_usd": 315000,
+    "remaining_budget_usd": 135000,
+    "burn_rate_per_month_usd": 40000,
+    "overrun_risk": "Low"
+  },
+  "quality_metrics": {
+    "defect_density": 0.6,
+    "escaped_defects": 3,
+    "code_coverage_percent": 92,
+    "unit_test_pass_rate_percent": 97,
+    "automation_coverage_percent": 78
+  },
+  "issues": [
+    {
+      "issue_id": "ISS-0023",
+      "type": "Bug",
+      "priority": "High",
+      "status": "Open",
+      "description": "Session timeout under load",
+      "sprint_id": "SPR-09",
+      "assigned_to": "Backend Team"
+    }
+  ],
+  "risks": [
+    {
+      "risk_id": "R-101",
+      "type": "Technical",
+      "description": "Complexity of legacy system integration",
+      "impact": "High",
+      "likelihood": "Medium",
+      "mitigation_plan": "Mock adapters and senior architect oversight"
+    },
+    {
+      "risk_id": "R-102",
+      "type": "Resource",
+      "description": "Resignation of key backend developer",
+      "impact": "Medium",
+      "likelihood": "High",
+      "mitigation_plan": "Parallel hiring and KT plan"
+    }
+  ],
+  "change_requests": [
+    {
+      "cr_id": "CR-009",
+      "description": "Add OCR scanning for invoices",
+      "requested_by": "Client",
+      "status": "Under Review",
+      "impact_analysis_done": true
+    }
+  ],
+  "dependencies": [
+    {
+      "type": "Third-party API",
+      "name": "Tally Finance API",
+      "status": "Partially Integrated",
+      "risk_flag": "High"
+    }
+  ],
+  "compliance": {
+    "data_protection": "GDPR",
+    "security_certifications": ["ISO 27001", "SOC2"],
+    "audit_status": "Passed (Q1 2025)",
+    "pending_audits": ["Client Internal Audit - May 2025"]
+  },
+  "resource_utilization": {
+    "planned_hours": 10500,
+    "utilized_hours": 9800,
+    "utilization_percent": 93.3
+  },
+  "client_engagement": {
+    "engagement_model": "Weekly Demos + Bi-weekly Reviews",
+    "last_feedback_score": 4.2,
+    "last_feedback_date": "2025-03-28",
+    "trend": "Positive",
+    "open_concerns": ["Slight lag in logistics rollout"]
+  },
+  "communication_plan": {
+    "daily_scrum_time": "10:00 AM IST",
+    "weekly_status_meeting": "Friday, 4 PM",
+    "channels": ["Email", "Slack", "Zoom"],
+    "tools": ["Jira", "Confluence", "Slack", "Zoom"]
+  },
+  "knowledge_management": {
+    "confluence_space": "https://companywiki/confluence/ERM",
+    "documentation_status": "Up-to-date",
+    "runbooks": ["Release Runbook", "Rollback Plan", "UAT Checklist"]
+  },
+  "project_health_indicators": {
+    "scope_adherence_percent": 95,
+    "schedule_status": "Yellow",
+    "budget_status": "Green",
+    "team_morale": "High",
+    "technical_debt_level": "Moderate"
+  },
+  "project_goals": {
+    "business_goal": "Improve operational efficiency by 40%",
+    "technical_goal": "Implement modular microservices with >90% automation coverage"
+  },
+  "project_closure_criteria": {
+    "all_deliverables_met": false,
+    "client_signoff_received": false,
+    "pending_artifacts": ["Final UAT Report", "Training Materials"]
+  }
+}

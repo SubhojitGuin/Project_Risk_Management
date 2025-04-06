@@ -1,51 +1,316 @@
 {
-    "risk_evaluation_rules": {
-        "integrity_and_anomalies": {
-            "duplicate_transactions_threshold": 2,
-            "outlier_detection_threshold": 5,
-            "invoice_mismatch_ratio_threshold": 0.1
+    "transaction_rules": {
+        "risk_evaluation_rules": {
+            "integrity_and_anomalies": {
+                "duplicate_transactions_threshold": 2,
+                "outlier_detection_threshold": 5,
+                "invoice_mismatch_ratio_threshold": 0.1
+            },
+            "compliance": {
+                "policy_violations_threshold": 3,
+                "manual_overrides_threshold": 2,
+                "approval_bypasses_threshold": 1
+            },
+            "fraud_risk": {
+                "multiple_payments_same_account": true,
+                "unusual_fund_flows_threshold": 10000.0,
+                "unjustified_transactions_threshold": 3
+            },
+            "vendor_risk": {
+                "high_dependency_vendors_threshold": 2,
+                "vendor_performance_issues": [
+                    "Late Deliverables",
+                    "Invoice Discrepancies"
+                ],
+                "vendor_compliance_flags": [
+                    "Non-compliance with SLAs",
+                    "Regulatory Violations"
+                ]
+            },
+            "financial_exposure": {
+                "budget_variance_threshold": 0.2,
+                "overdue_payments_threshold": 3,
+                "credit_exposure_threshold": 0.3,
+                "spend_over_authorization": true
+            },
+            "operational_risk": {
+                "timeline_impact_days_threshold": 10,
+                "resource_risk_percent_threshold": 0.2,
+                "high_cloud_spend_flag": true
+            },
+            "audit_and_traceability": {
+                "audit_trail_completeness_threshold": 90.0,
+                "last_audit_findings_critical_threshold": 2,
+                "mitigation_actions_pending_threshold": 3
+            },
+            "quantitative_score": {
+                "low": [0, 33],
+                "medium": [34, 66],
+                "high": [67, 84],
+                "critical": [85, 100]
+            }
+        }
+    },
+    "resource_management_rules": {
+        "human_resources": {
+          "shortage_threshold_percent": 20,
+          "resignation_rate_threshold_percent": 5,
+          "turnover_risk_threshold_percent": 10,
+          "utilization_max_percent": 90,
+          "idle_roles_threshold_percent": 15,
+          "skill_gap_threshold_count": 3,
+          "sla_impact_triggers_risk_score": 80,
+          "recovery_time_impact_score": {
+            "low": 10,
+            "medium": 30,
+            "high": 60,
+            "critical": 85
+          },
+          "compliance_flag_risk_score": 70
         },
-        "compliance": {
-            "policy_violations_threshold": 3,
-            "manual_overrides_threshold": 2,
-            "approval_bypasses_threshold": 1
+        "hardware_resources": {
+          "utilization_threshold_percent": 90,
+          "overload_threshold_percent": 10,
+          "end_of_life_threshold_percent": 5,
+          "minimum_available_threshold_percent": 10,
+          "critical_issues_keywords": [
+            "overheating",
+            "end-of-life",
+            "load >90%"
+          ],
+          "sla_impact_score": 90,
+          "compliance_risk_score": 85,
+          "recovery_time_impact_score": {
+            "low": 10,
+            "medium": 40,
+            "high": 70,
+            "critical": 90
+          }
         },
-        "fraud_risk": {
-            "multiple_payments_same_account": true,
-            "unusual_fund_flows_threshold": 10000.0,
-            "unjustified_transactions_threshold": 3
+        "cloud_resources": {
+          "utilization_threshold_percent": 95,
+          "budget_exceed_threshold_percent": 25,
+          "shortage_threshold_percent": 10,
+          "sla_impact_score": 90,
+          "compliance_risk_score": 85,
+          "recovery_time_impact_score": {
+            "low": 15,
+            "medium": 45,
+            "high": 75,
+            "critical": 95
+          }
         },
-        "vendor_risk": {
-            "high_dependency_vendors_threshold": 2,
-            "vendor_performance_issues": [
-                "Late Deliverables",
-                "Invoice Discrepancies"
-            ],
-            "vendor_compliance_flags": [
-                "Non-compliance with SLAs",
-                "Regulatory Violations"
-            ]
+        "software_resources": {
+          "license_utilization_threshold_percent": 95,
+          "license_expiry_warning_threshold": 10,
+          "shortage_threshold_percent": 5,
+          "compliance_keywords": [
+            "license expiration",
+            "unauthorized use"
+          ],
+          "sla_impact_score": 50,
+          "compliance_risk_score": 70
         },
-        "financial_exposure": {
-            "budget_variance_threshold": 0.2,
-            "overdue_payments_threshold": 3,
-            "credit_exposure_threshold": 0.3,
-            "spend_over_authorization": true
+        "database_resources": {
+          "utilization_threshold_percent": 95,
+          "latency_threshold_ms": 150,
+          "contention_keywords": [
+            "read/write contention",
+            "autovacuum"
+          ],
+          "sla_impact_score": 90,
+          "compliance_risk_score": 85
         },
-        "operational_risk": {
-            "timeline_impact_days_threshold": 10,
-            "resource_risk_percent_threshold": 0.2,
-            "high_cloud_spend_flag": true
+        "scoring_rules": {
+          "risk_exposure_score_ranges": {
+            "low": [0, 33],
+            "medium": [34, 66],
+            "high": [67, 84],
+            "critical": [85, 100]
+          },
+          "sla_impact_weight": 0.25,
+          "compliance_risk_weight": 0.2,
+          "recovery_time_weight": 0.15,
+          "utilization_weight": 0.15,
+          "shortage_weight": 0.15,
+          "issues_weight": 0.1,
+          "critical_risk_threshold_score": 85,
+          "top_risk_display_threshold_score": 67
+        }
+    },
+    "project_risk_rules": {
+        "delivery_risk": {
+          "milestone_delay_threshold_days": 5,
+          "missed_milestone_ratio_threshold": 0.3,
+          "epic_delay_threshold_days": 7,
+          "task_delay_ratio_threshold": 0.25
         },
-        "audit_and_traceability": {
-            "audit_trail_completeness_threshold": 90.0,
-            "last_audit_findings_critical_threshold": 2,
-            "mitigation_actions_pending_threshold": 3
+        "velocity_risk": {
+          "velocity_drop_percent_threshold": 20,
+          "below_commitment_velocity_threshold": 3,
+          "average_velocity_threshold": 15
         },
-        "quantitative_score": {
-            "low_risk_score_range": [0, 33],
-            "medium_risk_score_range": [34, 66],
-            "high_risk_score_range": [67, 100]
+        "backlog_risk": {
+          "aging_backlog_percent_threshold": 25,
+          "unrefined_story_ratio_threshold": 0.2,
+          "backlog_burndown_delay_days": 5
+        },
+        "budget_risk": {
+          "actual_vs_planned_variance_percent": 20,
+          "unapproved_cost_overrun_threshold": 10000,
+          "burn_rate_spike_percent_threshold": 30
+        },
+        "quality_risk": {
+          "open_defect_count_threshold": 25,
+          "severity_1_defects_threshold": 3,
+          "defect_reopen_ratio_threshold": 0.15,
+          "test_coverage_threshold_percent": 70
+        },
+        "issue_risk": {
+          "open_critical_issues_threshold": 5,
+          "resolution_delay_days_threshold": 7,
+          "repeated_issue_patterns_threshold": 3
+        },
+        "change_management_risk": {
+          "scope_change_count_threshold": 3,
+          "impactful_change_request_threshold": 2,
+          "late_change_request_threshold": 2,
+          "change_request_approval_delay_days": 3
+        },
+        "strategic_alignment_risk": {
+          "business_value_score_threshold": 3,
+          "strategic_objective_mismatch_flag": true,
+          "non_aligned_feature_ratio_threshold": 0.2
+        },
+        "governance_risk": {
+          "steering_committee_meeting_miss_threshold": 2,
+          "risk_log_outdated_days_threshold": 7,
+          "governance_violations_count_threshold": 2
+        },
+        "reporting_risk": {
+          "kpi_miss_threshold": 3,
+          "dashboard_update_delay_days_threshold": 5,
+          "incomplete_reporting_ratio_threshold": 0.2
+        },
+        "security_compliance_risk": {
+          "open_security_incident_count_threshold": 1,
+          "compliance_violation_count_threshold": 2,
+          "pending_audit_findings_threshold": 3
+        },
+        "technical_integration_risk": {
+          "interface_failure_count_threshold": 2,
+          "integration_delay_days_threshold": 5,
+          "critical_module_instability_threshold": 2,
+          "tech_stack_obsolescence_flag": true
+        },
+        "risk_process_risk": {
+          "unidentified_risks_count_threshold": 3,
+          "lack_of_risk_response_plan_flag": true,
+          "delayed_risk_mitigation_action_threshold": 3
+        },
+        "stakeholder_risk": {
+          "negative_feedback_count_threshold": 2,
+          "stakeholder_participation_rate_threshold": 50,
+          "conflict_escalation_count_threshold": 2
+        },
+        "release_risk": {
+          "failed_deployment_count_threshold": 2,
+          "rollback_count_threshold": 1,
+          "release_readiness_delay_days": 3,
+          "incomplete_release_notes_flag": true
+        },
+        "agility_risk": {
+          "low_adaptability_feedback_threshold": 3,
+          "response_to_change_delay_days_threshold": 3,
+          "retrospective_action_items_pending_threshold": 4
+        },
+        "overall_risk_score_ranges": {
+          "low": [0, 33],
+          "medium": [34, 66],
+          "high": [67, 84],
+          "critical": [85, 100]
+        }
+    },
+    "overall_risk_rules": {
+        "risk_classification_thresholds": {
+            "low": [0, 33],
+            "medium": [34, 66],
+            "high": [67, 84],
+            "critical": [85, 100]
+        },
+        "weighting_factors": {
+            "transaction_risk_weight": 0.3,
+            "resource_risk_weight": 0.4,
+            "project_risk_weight": 0.3
+        },
+        "cross_domain_amplification_factors": {
+            "transaction_to_resource": 0.2,
+            "resource_to_project": 0.3,
+            "transaction_to_project": 0.1
+        },
+        "severity_multipliers": {
+            "low": 1.0,
+            "medium": 1.5,
+            "high": 2.0,
+            "critical": 2.5
+        },
+        "risk_aggregation_rules": {
+            "transaction_risk": {
+                "duplicate_transactions_threshold": 2,
+                "outlier_detection_threshold": 5,
+                "invoice_mismatch_ratio_threshold": 0.1,
+                "policy_violations_threshold": 3,
+                "manual_overrides_threshold": 2,
+                "approval_bypasses_threshold": 1,
+                "unusual_fund_flows_threshold": 10000.0,
+                "unjustified_transactions_threshold": 3
+            },
+            "resource_risk": {
+                "human_resources": {
+                    "shortage_threshold_percent": 20,
+                    "utilization_max_percent": 90,
+                    "turnover_risk_threshold_percent": 10
+                },
+                "hardware_resources": {
+                    "utilization_threshold_percent": 90,
+                    "overload_threshold_percent": 10,
+                    "end_of_life_threshold_percent": 5
+                },
+                "cloud_resources": {
+                    "utilization_threshold_percent": 95,
+                    "budget_exceed_threshold_percent": 25
+                },
+                "database_resources": {
+                    "utilization_threshold_percent": 95,
+                    "latency_threshold_ms": 150
+                }
+            },
+            "project_risk": {
+                "delivery_risk": {
+                    "milestone_delay_threshold_days": 5,
+                    "missed_milestone_ratio_threshold": 0.3
+                },
+                "budget_risk": {
+                    "actual_vs_planned_variance_percent": 20,
+                    "unapproved_cost_overrun_threshold": 10000
+                },
+                "quality_risk": {
+                    "open_defect_count_threshold": 25,
+                    "test_coverage_threshold_percent": 70
+                },
+                "technical_integration_risk": {
+                    "interface_failure_count_threshold": 2,
+                    "integration_delay_days_threshold": 5
+                }
+            }
+        },
+        "final_risk_score_calculation": {
+            "formula": "((transaction_risk_score * transaction_risk_weight) + (resource_risk_score * resource_risk_weight) + (project_risk_score * project_risk_weight)) * (1 + cross_domain_amplification_factor)"
+        },
+        "critical_risk_alerts": {
+            "threshold_score": 85,
+            "immediate_action_required": true,
+            "escalation_level": "Executive"
         }
     }
 }
