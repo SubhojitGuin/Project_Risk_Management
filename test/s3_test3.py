@@ -16,11 +16,11 @@ s3 = boto3.client(
 )
 # Uploading a png file to S3 in
 # 'mygfgbucket' from local folder
-s3.upload_file(
-    Filename="business_transactions.csv",
-    Bucket=PUBLIC_BUCKET,
-    Key="ABC/business_transactions.csv"
-)
+# s3.upload_file(
+#     Filename="business_transactions.csv",
+#     Bucket=PUBLIC_BUCKET,
+#     Key="ABC/business_transactions.csv"
+# )
  
 s3.download_file(
     Filename="Download/DownloadedFile.csv",

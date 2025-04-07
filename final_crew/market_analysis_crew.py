@@ -37,7 +37,7 @@ class ResultList(BaseModel):
     results: list[Results]
 
 @CrewBase
-class MarketAnalysis:
+class MarketAnalysisCrew:
     @agent
     def agent(self) -> Agent:
         return Agent(
@@ -118,7 +118,7 @@ class MarketAnalysis:
     
 
 if __name__ == "__main__":
-    crew = MarketAnalysis().crew()
+    crew = MarketAnalysisCrew().crew()
     # Load the project description file
     with open("project_details/project_description.txt", "r") as f:
         project_description = f.read()
