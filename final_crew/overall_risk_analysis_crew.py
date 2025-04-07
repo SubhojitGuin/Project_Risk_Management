@@ -10,7 +10,7 @@ os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
 
 llm = LLM(
     model=os.getenv("MODEL"),
-    temperature=0.5,
+    temperature=0.25,
     base_url="https://api.openai.com/v1",
     api_key=os.getenv("OPENAI_API_KEY"),
 )
@@ -55,7 +55,7 @@ class OverallRiskAnalysisCrew:
             Finally, the agent must generate strategic and prioritized recommendations tailored to different stakeholder roles (project manager, security officer, resource coordinator, etc.), helping them to act decisively on mitigation or contingency plans.
             """,
             expected_output="""
-           A txt file containing a comprehensive and human-readable Overall Project Risk Analysis Report. The report should be structured in plain text format (no markdown syntax such as **, #, or ---) and divided into clear, labeled sections with headings, subheadings, indentation, and bullet points. The layout should support both technical and executive readability.
+            A txt file containing a comprehensive and human-readable Overall Project Risk Analysis Report. The report should be structured in plain text format (no markdown syntax such as , #, or ---) and divided into clear, labeled sections with headings, subheadings, indentation, and bullet points. The layout should support both technical and executive readability.
 
             The report must include the following detailed sections and parameters:
 
@@ -141,51 +141,92 @@ class OverallRiskAnalysisCrew:
                     - Specific recommendations tied to project execution and planning
 
             3. Correlation & Cross-Domain Analysis
-                - Risk amplification patterns:
-                    • E.g., policy violations (transaction) → under-provisioned software (resource) → delivery slippage (project)
-                - Cross-domain risk loops and dependencies
-                - Summary matrix linking causes and effects across domains
+
+                Analyze interdependencies across {transaction_risks}, {resources_risks}, and {project_risks}. Your goal is to identify how issues in one domain amplify or trigger risks in another, and how they form cascading or cyclical risk patterns.
+
+                What to do:
+                - Detect root-cause triggers (e.g., failed transactions, resource constraints, security breaches).
+                - Trace downstream impacts on project delivery, quality, velocity, or cost.
+                - Identify cross-domain feedback loops, where issues in one area worsen conditions in another and circle back.
+                - Highlight hidden dependencies or indirect links (e.g., expired software license → stalled development → missed release).
+                - Avoid using predefined chains—build correlations dynamically using observed data relationships such as order of events, recurrence, and magnitude.
+                - For each correlation, infer the specific reasoning behind it. (Example:
+                    "Transaction anomaly caused a delayed vendor payment, leading to cloud downtime, which delayed integration testing.")
+                - Provide 9-10 examples of inferred correlations with clear descriptions, statistics, and numeric values to prove your point.
+                
+
+                - Construct a Dynamic Cause-Effect Matrix
+                - For every inferred correlation, populate a matrix with:
+                    - Source domain
+                    - Cause description (your inference)
+                    - Target domain
+                    - Effect description
+                    - Confidence score (based on frequency, impact, or correlation strength)
+                 
+                    Example format:
+
+                    | Source Domain     | Cause Description         | Effect Domain     | Effect Description           | Confidence Level      |
+                    |-------------------|---------------------------|-------------------|------------------------------|-----------------------|
+                    | You infer this dynamically from data logs and not from static templates or hardcoded rules.                              |
+
+                Avoid Hardcoded Chains:
+                You must not depend on static examples like "policy violation → software issue → delivery delay." Instead, analyze logs, audit trails, and historical events to build these relationships yourself, based on frequency, ordering, and impact.
 
             4. Overall Risk Scoring
-                - Weighted scoring model:
-                    • Domain-wise weights (e.g., Transaction: 30%, Resource: 35%, Project: 35%)
-                - Tabular breakdown:
-                    | Domain        | Score | Weight (%) | Weighted Score |
-                    |---------------|-------|------------|----------------|
-                    | Transaction   | XX    | 30%        | XX             |
-                    | Resource      | XX    | 35%        | XX             |
-                    | Project       | XX    | 35%        | XX             |
-                    | Total         |       |            | Final Score    |
-                - Final Aggregated Risk Score (0–100)
-                - Risk Band Classification:
-                    • 🟢 Low (0–25)
-                    • 🟡 Medium (26–50)
-                    • 🔴 High (51–75)
-                    • 🚨 Critical (76–100)
 
-            5. Strategic Recommendations
-                - Short-Term Actions (1–7 Days):
-                    • Immediate remediations (e.g., patch updates, access fixes, team rebalance)
-                - Mid-Term Interventions (1–4 Weeks):
-                    • Tactical changes (e.g., hiring, resource reallocation, updated sprint planning)
-                - Long-Term Strategies (4+ Weeks):
-                    • Structural or governance improvements (e.g., compliance framework, automation)
-                - Assignment of Risk Owners for each major risk area
+                Objective:
+                You must assess the overall risk level by combining individual domain scores using a weighted model and produce a final risk score with a meaningful classification.
 
-            6. Observations & Alerts
-                - Emerging trends or risks not yet critical but needing monitoring
-                - Blind spots in current tracking (e.g., no data on facility uptime or skill readiness)
-                - External dependency risks:
-                    • Vendor instability
-                    • Regulatory changes
-                    • Market disruptions (e.g., supply chain or geopolitical shifts)
+                What You Should Do:
 
-            7. Appendices (Optional)
-                - Static rule thresholds and scoring logic used
-                - Detailed transaction logs or risk flags
-                - Resource availability graphs or tables
-                - Burn-down charts or sprint reports
-                - Any custom insights or logs helpful for audits
+                - Step 1: Calculate Domain-Specific Scores
+                - Evaluate each domain (Transaction, Resource, Project) independently using normalized indicators such as frequency, severity, and persistence of risk events.
+                - Convert raw metrics into a 0–100 score for each domain.
+
+                - Step 2: Apply Domain Weights
+                - Use predefined or dynamically determined weights (e.g., Transaction: 30%, Resource: 35%, Project: 35%) to reflect the importance of each domain in the context of the current project.
+
+                - Step 3: Generate Weighted Risk Table
+
+                    | Domain         | Raw Score (0–100)     | Weight (%)     | Weighted Score      |
+                    |----------------|-----------------------|----------------|---------------------|
+                    | Transaction    | XX                    | 30%            | XX × 0.30           |
+                    | Resource       | XX                    | 35%            | XX × 0.35           |
+                    | Project        | XX                    | 35%            | XX × 0.35           |
+                    | Total          |                       |                | Final Aggregated    |
+
+                - Step 4: Classify Final Risk Scor
+                - Based on the final score (0–100), assign a qualitative risk band:
+                    - 🟢 Low (0–25)
+                    - 🟡 Medium (26–50)
+                    - 🔴 High (51–75)
+                    - 🚨 Critical (76–100)
+
+
+            5. Observations & Alerts
+
+                Objective:
+                You must proactively detect and surface hidden or emerging risks before they escalate.
+
+                What You Should Do:
+
+                - Identify Emerging Risks:
+                - Use trend analysis and anomaly detection to identify slowly growing risks.
+                - Look for a gradual rise in event frequency, severity, or a widening deviation from baselines.
+
+                - Spot Blind Spots:
+                - Identify areas in the system where no data is being collected or monitored.
+                - For example, check if there’s no visibility into:
+                    - Facility uptime
+                    - Team availability or skill readiness
+                    - Third-party service performance
+
+                - Alert on External Dependency Risks:
+                - Monitor for external signals such as:
+                    - Vendor changes or instability
+                    - Regulatory updates
+                    - Market shifts (e.g., supply chain delays)
+                - Match these signals with internal dependencies and raise alerts if overlaps exist.
 
             Formatting Guidelines:
             - Use clear section headings in plain text (no markdown).

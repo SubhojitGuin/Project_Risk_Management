@@ -43,7 +43,7 @@ class ProjectRiskAnalysisCrew:
             """,
             expected_output="""
             A txt file containing a detailed report on the project risk analysis including the following sections:
-
+            
             - Classify each risk category into one of the levels: Low, Medium, High, or Critical.
             - Highlight breached thresholds or anomalies triggering the risk.
             - Provide a reason or analysis for each flagged risk.

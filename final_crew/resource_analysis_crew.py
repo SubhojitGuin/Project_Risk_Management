@@ -53,7 +53,7 @@ class ResourceRiskAnalysisCrew:
             - Rule-based justification (linked to {static_records})
             - Mitigation recommendations (both immediate and strategic)
 
-            Do not include the markdown symbols in the output (like **, #). The report should be structured and easy to read, with clear headings and subheadings for each section. Use bullet points or numbered lists where appropriate to enhance readability.
+            Do not include the markdown symbols in the output (like **, #, ---). The report should be structured and easy to read, with clear headings and subheadings for each section. Use bullet points or numbered lists where appropriate to enhance readability.
            
             """,
             output_file="output/resource_risk_analysis.txt",

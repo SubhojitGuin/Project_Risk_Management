@@ -16,80 +16,6 @@ llm = LLM(
 )
 
 
-# class IntegrityAndAnomalies(BaseModel):
-#     duplicate_transactions: int
-#     outlier_detection_count: int
-#     invoice_mismatch_ratio: float  # e.g., 0.15 means 15% mismatches
-
-
-# class ComplianceRisk(BaseModel):
-#     policy_violations: int
-#     manual_overrides: int
-#     approval_bypasses: int
-
-
-# class FraudRisk(BaseModel):
-#     multiple_payments_same_account: bool
-#     unusual_fund_flows: float
-#     unjustified_transactions_count: int
-
-
-# class VendorRisk(BaseModel):
-#     vendor_performance_issues: List[str]
-#     vendor_compliance_flags: List[str]
-#     high_dependency_vendors: int
-
-
-# class FinancialExposure(BaseModel):
-#     budget_variance: float
-#     overdue_payments_count: int
-#     overdue_amount: float
-#     credit_exposure_percent: float
-#     spend_over_authorization: bool
-
-
-# class OperationalRisk(BaseModel):
-#     timeline_impact_days: int
-#     resource_risk_percent: float
-#     high_cloud_spend_flag: bool
-
-
-# class AuditAndTraceability(BaseModel):
-#     audit_trail_completeness_percent: float
-#     last_audit_findings: List[str]
-#     mitigation_actions_taken: List[str]
-
-
-# class QuantitativeScore(BaseModel):
-#     risk_rating: str  # "Low", "Medium", "High"
-#     transaction_risk_score: float  # 0 to 100
-
-
-# class Categorization(BaseModel):
-#     transaction_type: str
-#     department: str
-#     risk_category: str  # "Compliance", "Fraud", etc.
-
-
-# class TransactionRiskAnalysisReport(BaseModel):
-#     project_id: str
-#     project_name: str
-#     reporting_period: str
-#     report_date: str
-#     currency: str
-
-#     integrity_anomalies: IntegrityAndAnomalies
-#     compliance: ComplianceRisk
-#     fraud: FraudRisk
-#     vendor_risk: VendorRisk
-#     financial_exposure: FinancialExposure
-#     operational_risk: OperationalRisk
-#     audit_traceability: AuditAndTraceability
-#     quantitative_score: QuantitativeScore
-#     categorization: Categorization
-
-
-    
 @CrewBase
 class TransactionRiskAnalysisCrew:
     @agent
@@ -103,7 +29,7 @@ class TransactionRiskAnalysisCrew:
             llm=llm,
             verbose=True,
         )
-            
+
     @task
     def task(self) -> Task:
         return Task(
@@ -125,14 +51,12 @@ class TransactionRiskAnalysisCrew:
             - Categorization: Transaction Type, Department/Cost Center, Risk Category (Compliance/Fraud/etc.)
 
             Do not include the markdown symbols in the output. The report should be structured and easy to read, with clear headings and subheadings for each section. Use bullet points or numbered lists where appropriate to enhance readability.
-           
             """,
             output_file="output/transaction_risk_analysis.txt",
             agent=self.agent(),
-            # output_json=TransactionRiskAnalysisReport,
             verbose=True
         )
-    
+
     @crew
     def crew(self) -> Crew:
         return Crew(
@@ -153,16 +77,3 @@ if __name__ == "__main__":
     with open("project_details/market_analysis_summary.json", "r") as f:
         market_records = json.load(f)
     TransactionRiskAnalysisCrew().crew().kickoff({"transaction_records": transaction_records, "static_records": static_records, "market_records": market_records})
-
-
-#  A structured txt report containing:
-    # 1. Integrity and Anomalies
-    # 2. Compliance Risk
-    # 3. Fraud Risk
-    # 4. Vendor Risk
-    # 5. Financial Exposure
-    # 6. Operational Risk
-    # 7. Audit and Traceability
-    # 8. Quantitative Score
-    # 9. Categorization
-    # 10. Summary of Findings and Recommendations
