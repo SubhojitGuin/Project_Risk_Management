@@ -28,8 +28,11 @@ def download_file(file_key, local_path):
     s3_client.download_file(PUBLIC_BUCKET, file_key, local_path)
 
 def upload_file(file_key, local_path):
-    s3_client.upload_file(local_path, PUBLIC_BUCKET, file_key)
+    s3_client.upload_file(local_path, PUBLIC_BUCKET, file_key, ExtraArgs={'ACL': 'public-read'})
 
 if __name__ == "__main__":
     bucket_name = PUBLIC_BUCKET
+    file_key = "IPM/report.txt"
+    file_url = f"https://{PUBLIC_BUCKET}.s3.{REGION}.amazonaws.com/{file_key}"
+    print(file_url)
     
