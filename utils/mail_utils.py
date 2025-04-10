@@ -27,7 +27,7 @@ def send_mail(content, project_key):
         server.starttls()
         server.login(email, password)  
         server.send_message(message)
-    
+    del message["To"]
 
 if __name__ == "__main__":
     content = "This is a test email."

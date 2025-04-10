@@ -1674,3 +1674,1117 @@ Overall Risk Analysis: Overall Project Risk Analysis Report
 End of Report.
 
 
+Project: IPM/
+Transaction Analysis: Transaction Risk Analysis Report  
+Project ID: PRJ-SEC-002  
+Project Name: Prevention of Data Poisoning Attacks in Federated Learning  
+Reporting Period: 2025-Q1  
+Prepared By: Project Finance Team  
+Report Date: 2025-04-05  
+Currency: USD  
+
+1. **Integrity & Anomalies**  
+   - **Duplicate Transactions**  
+     - Severity: High  
+     - Root Cause: Lack of transaction validation mechanisms.  
+     - Mitigation Steps: Implement automated checks to detect duplicates before processing.  
+   - **Outlier Detection**  
+     - Severity: Medium  
+     - Root Cause: Anomalies in transaction amounts not flagged.  
+     - Mitigation Steps: Establish thresholds for transaction amounts and review outliers regularly.  
+   - **Invoice Mismatches**  
+     - Severity: Medium  
+     - Root Cause: Invoice and PO mismatch ratio at 0.18 indicating potential discrepancies.  
+     - Mitigation Steps: Enforce stricter matching rules between invoices and purchase orders.
+
+2. **Compliance**  
+   - **Policy Violations**  
+     - Severity: High  
+     - Root Cause: Identified compliance issues such as unjustified hardware purchases and unapproved vendor invoicing.  
+     - Mitigation Steps: Regular compliance training for staff and audits to ensure adherence to policies.  
+   - **Manual Overrides**  
+     - Severity: Medium  
+     - Root Cause: Manual overrides noted 4 times indicating possible process weaknesses.  
+     - Mitigation Steps: Limit manual overrides to exceptional cases and require additional approvals.  
+   - **Approval Process Bypasses**  
+     - Severity: High  
+     - Root Cause: 3 instances of invoice approval bypasses detected.  
+     - Mitigation Steps: Strengthen the approval workflow and implement a tracking system for approvals.
+
+3. **Fraud Risk**  
+   - **Multiple Payments to Same Vendor/Account**  
+     - Severity: High  
+     - Root Cause: Identified multi-payments to the same account.  
+     - Mitigation Steps: Flag and freeze suspicious accounts for further investigation.  
+   - **Unusual Fund Flows**  
+     - Severity: High  
+     - Root Cause: Unexplained fund flows totaling $47,000.  
+     - Mitigation Steps: Conduct a forensic audit to trace the source of these funds.  
+   - **Unjustified Transactions**  
+     - Severity: Medium  
+     - Root Cause: Instances of unjustified hardware purchases.  
+     - Mitigation Steps: Review and justify all purchases against project needs.
+
+4. **Vendor Risk**  
+   - **Vendor Performance Issues**  
+     - Severity: Medium  
+     - Root Cause: 3 high-risk vendors identified with compliance issues.  
+     - Mitigation Steps: Conduct vendor risk re-evaluation and establish performance metrics.  
+   - **Compliance Flags**  
+     - Severity: Medium  
+     - Root Cause: Late deliverables and invoice discrepancies reported.  
+     - Mitigation Steps: Implement stricter vendor compliance checks and regular performance reviews.  
+   - **High Dependency Vendors**  
+     - Severity: Medium  
+     - Root Cause: Reliance on a limited number of vendors for critical services.  
+     - Mitigation Steps: Diversify vendor base to reduce dependency risks.
+
+5. **Financial Exposure**  
+   - **Budget Variance**  
+     - Severity: High  
+     - Root Cause: Estimated final spend exceeds the budget by $150,000.  
+     - Mitigation Steps: Reassess budget allocations and enforce stricter spending controls.  
+   - **Overdue Payments**  
+     - Severity: High  
+     - Root Cause: 3 overdue payables totaling $120,000.  
+     - Mitigation Steps: Prioritize payment of overdue amounts and negotiate payment terms with vendors.  
+   - **Credit Exposure**  
+     - Severity: Medium  
+     - Root Cause: 73.3% of credit limit utilized.  
+     - Mitigation Steps: Monitor credit utilization closely and manage credit limits proactively.  
+   - **Spend over Authorization**  
+     - Severity: Medium  
+     - Root Cause: Instances of spending beyond authorized limits.  
+     - Mitigation Steps: Establish clear authorization processes for spending.
+
+6. **Operational Risk**  
+   - **Timeline Impact**  
+     - Severity: Medium  
+     - Root Cause: Schedule variance of 8 days detected.  
+     - Mitigation Steps: Review project timelines and adjust resources to meet deadlines.  
+   - **Resource Risk**  
+     - Severity: Medium  
+     - Root Cause: Resource turnover at 12.5% impacting project continuity.  
+     - Mitigation Steps: Develop retention strategies and cross-train employees.  
+   - **High Cloud Spend**  
+     - Severity: High  
+     - Root Cause: Monthly cloud spend exceeds threshold at $16,000.  
+     - Mitigation Steps: Review cloud usage and optimize costs through resource management.
+
+7. **Audit & Traceability**  
+   - **Audit Trail Completeness**  
+     - Severity: Medium  
+     - Root Cause: Last audit identified 3 issues.  
+     - Mitigation Steps: Ensure all transactions are logged and maintain a comprehensive audit trail.  
+   - **Last Audit Findings**  
+     - Severity: High  
+     - Root Cause: Compliance issues noted in the last audit.  
+     - Mitigation Steps: Address all findings before the next audit scheduled for June 20, 2025.  
+   - **Mitigation Actions Taken**  
+     - Severity: Medium  
+     - Root Cause: Need for ongoing monitoring of implemented actions.  
+     - Mitigation Steps: Regular follow-ups on mitigation actions and adjustments as needed.
+
+8. **Quantitative Score**  
+   - **Risk Rating**: High  
+   - **Transaction Risk Score**: 75  
+
+9. **Categorization**  
+   - **Transaction Type**: Operational Expenditures  
+   - **Department/Cost Center**: Project Finance  
+   - **Risk Category**: Compliance, Fraud, Financial Exposure  
+
+This report highlights the key risk areas identified in the transaction data and provides actionable recommendations to mitigate these risks effectively. Regular monitoring and proactive measures will be essential to maintain the project's integrity and financial health.
+Resource Analysis: Resource Risk Analysis Report  
+Report Generated On: 2025-04-06  
+Generated By: Resource Risk Analysis Agent  
+Project ID: PRJ-IT-2025-034  
+Project Name: Cloud-native Microservices Migration  
+Department: Enterprise IT  
+
+Overall Risk Level: High  
+Overall Risk Score: 83  
+
+Category-wise Risk Assessments:  
+
+1. **Human Resources**  
+   - Total Assigned: 60  
+   - Available: 55  
+   - Required: 70  
+   - Shortage: 15  
+   - Resignation Rate: 5%  
+   - Utilization Rate: 92%  
+   - Turnover Risk: 14.5%  
+   - Skill Gap: Kubernetes, GraphQL  
+   - Risk Severity: High  
+   - Impact Score: 8.0  
+   - Probability Score: 0.7  
+   - Risk Exposure: 5.6  
+   - SLA Impact: Yes  
+   - Recovery Time: 21 days  
+   - Compliance Risk: No  
+   - Issues: None  
+
+2. **Hardware Resources**  
+   - Servers  
+     - Total: 60  
+     - In Use: 55  
+     - Available: 5  
+     - Utilization Rate: 91.6%  
+     - Risk Severity: High  
+     - Impact Score: 8.5  
+     - Probability Score: 0.75  
+     - Risk Exposure: 6.38  
+     - SLA Impact: Yes  
+     - Recovery Time: 10 days  
+     - Compliance Risk: No  
+     - Issues: Overheating, End-of-life servers  
+   - CPU  
+     - Total Cores: 1024  
+     - In Use: 950  
+     - Available: 74  
+     - Utilization Rate: 92.8%  
+     - Risk Severity: High  
+     - Impact Score: 8.2  
+     - Probability Score: 0.78  
+     - Risk Exposure: 6.4  
+     - SLA Impact: Yes  
+     - Recovery Time: 8 days  
+     - Compliance Risk: No  
+     - Issues: Sustained CPU load >90%  
+   - GPU  
+     - Total Units: 40  
+     - In Use: 38  
+     - Available: 2  
+     - Utilization Rate: 95%  
+     - Risk Severity: Critical  
+     - Impact Score: 9.0  
+     - Probability Score: 0.85  
+     - Risk Exposure: 7.65  
+     - SLA Impact: Yes  
+     - Recovery Time: 12 days  
+     - Compliance Risk: Yes  
+     - Issues: Thermal throttling  
+
+3. **Cloud Resources**  
+   - AWS Compute  
+     - Total Instances: 200  
+     - In Use: 195  
+     - Utilization Rate: 97.5%  
+     - Risk Severity: Critical  
+     - Impact Score: 9.5  
+     - Probability Score: 0.9  
+     - Risk Exposure: 8.55  
+     - SLA Impact: Yes  
+     - Recovery Time: 14 days  
+     - Compliance Risk: Yes  
+   - AWS Storage  
+     - Used Capacity: 480 TB  
+     - Available: 20 TB  
+     - Utilization Rate: 96%  
+     - Risk Severity: High  
+     - Impact Score: 8.0  
+     - Probability Score: 0.8  
+     - Risk Exposure: 6.4  
+     - SLA Impact: Yes  
+     - Recovery Time: 7 days  
+     - Compliance Risk: Yes  
+
+4. **Software Resources**  
+   - Licenses Total: 300  
+   - In Use: 290  
+   - Available: 10  
+   - Shortage: 20  
+   - Licenses Expiring Soon: 18  
+   - Risk Severity: Medium  
+   - Impact Score: 4.0  
+   - Probability Score: 0.5  
+   - Risk Exposure: 2.0  
+   - SLA Impact: No  
+   - Recovery Time: 3 days  
+   - Compliance Risk: Yes  
+
+5. **Database Resources**  
+   - Total Instances: 6  
+   - In Use: 6  
+   - Available: 0  
+   - Utilization Rate: 98%  
+   - Risk Severity: High  
+   - Impact Score: 8.5  
+   - Probability Score: 0.82  
+   - Risk Exposure: 6.97  
+   - SLA Impact: Yes  
+   - Recovery Time: 6 days  
+   - Compliance Risk: Yes  
+
+Identified Issues and Potential Impacts:  
+- Human Resources: Skill gaps may lead to project delays and increased dependency on external contractors.  
+- Hardware Resources: Overheating servers and aging infrastructure could lead to unexpected outages and SLA violations.  
+- Cloud Resources: Exceeding budget thresholds and high utilization rates pose risks to financial sustainability and operational efficiency.  
+- Software Resources: License shortages and expirations could disrupt project workflows and compliance with regulations.  
+- Database Resources: High utilization and contention may result in performance issues affecting application responsiveness and user satisfaction.  
+
+Rule-based Justification:  
+- Human Resources: Shortage of 15 (25% of required resources), resignation rate at threshold (5%), and turnover risk at 14.5% (over 10% threshold) indicate significant risks.  
+- Hardware Resources: Utilization rates above 90% and critical issues like overheating and end-of-life servers necessitate immediate action.  
+- Cloud Resources: AWS compute utilization at 97.5% exceeds the 95% threshold, indicating critical risk exposure.  
+- Software Resources: License utilization at 96.67% (290/300) is nearing the 95% threshold, indicating potential compliance issues.  
+- Database Resources: Utilization at 98% exceeds the 95% threshold, with latency issues indicating potential SLA violations.  
+
+Mitigation Recommendations:  
+- **Immediate Actions**  
+  - Human Resources: Hire contractors to address skill gaps and reduce workload on existing staff.  
+  - Hardware Resources: Procure new servers and upgrade critical nodes to alleviate overheating and end-of-life issues.  
+  - Cloud Resources: Convert to reserved instances for AWS compute and request budget reallocations to manage costs.  
+  - Software Resources: Renew expiring licenses and monitor license assignments to avoid shortages.  
+  - Database Resources: Optimize query patterns and scale read replicas to manage contention and improve performance.  
+
+- **Strategic Actions**  
+  - Invest in training programs to build internal capabilities and address skill gaps in Kubernetes and GraphQL.  
+  - Implement a regular maintenance schedule for hardware to prevent overheating and ensure timely upgrades.  
+  - Develop a comprehensive cloud strategy to balance between on-premise and cloud resources to mitigate over-reliance.  
+  - Regularly review software licensing agreements to ensure compliance and avoid operational disruptions.  
+  - Establish a proactive database management plan to tune performance and ensure optimal resource allocation.  
+
+Next Review Date: 2025-05-01
+Project Analysis: Project Risk Analysis Report  
+Project ID: PRJ-2025-001  
+Project Name: Enterprise Resource Management System  
+Date: [Insert Date]
+
+1. **Delivery Risk**  
+   - **Risk Level:** Medium  
+   - **Breached Thresholds:**  
+     - Missed milestone ratio: 1 missed milestone out of 4 total, which is 25% (threshold is 30%).  
+     - Epic delays: 2 out of 10 epics are delayed, which is 20% (threshold is 20%).  
+   - **Analysis:** The project has experienced one missed milestone (Finance Module Delivery) due to legacy system integration delays. The delays in epics indicate potential issues in timely delivery.  
+   - **Mitigation Recommendations:**  
+     - Conduct a root cause analysis of the missed milestone and implement lessons learned.  
+     - Increase monitoring of epic progress and adjust sprint planning to accommodate delays.
+
+2. **Velocity Risk**  
+   - **Risk Level:** Low  
+   - **Breached Thresholds:** None  
+   - **Analysis:** The average sprint velocity is 42 story points, which is below the target of 50 but stable.  
+   - **Mitigation Recommendations:**  
+     - Review team capacity and adjust story point estimation to align better with actual velocity.
+
+3. **Backlog Risk**  
+   - **Risk Level:** Low  
+   - **Breached Thresholds:** None  
+   - **Analysis:** The backlog appears manageable with no significant aging or unrefined stories reported.  
+   - **Mitigation Recommendations:**  
+     - Continue regular backlog grooming sessions to prevent future issues.
+
+4. **Budget Risk**  
+   - **Risk Level:** Low  
+   - **Breached Thresholds:** None  
+   - **Analysis:** The budget utilization is within acceptable limits, with a burn rate of $40,000 per month and a total remaining budget of $135,000.  
+   - **Mitigation Recommendations:**  
+     - Maintain ongoing budget reviews to ensure alignment with project goals.
+
+5. **Quality Risk**  
+   - **Risk Level:** Low  
+   - **Breached Thresholds:** None  
+   - **Analysis:** Quality metrics indicate a defect density of 0.6, with a high code coverage of 92%.  
+   - **Mitigation Recommendations:**  
+     - Continue to maintain high testing standards and monitor defect trends.
+
+6. **Issues Risk**  
+   - **Risk Level:** Low  
+   - **Breached Thresholds:** None  
+   - **Analysis:** Only one open critical issue (session timeout under load) is reported, which is manageable.  
+   - **Mitigation Recommendations:**  
+     - Prioritize resolution of the open issue and ensure timely follow-up.
+
+7. **Change Management Risk**  
+   - **Risk Level:** Low  
+   - **Breached Thresholds:** None  
+   - **Analysis:** The project has one change request under review, with no significant backlog of requests.  
+   - **Mitigation Recommendations:**  
+     - Ensure thorough impact analysis for all change requests to avoid scope creep.
+
+8. **Strategic Alignment Risk**  
+   - **Risk Level:** Medium  
+   - **Breached Thresholds:** Strategic objective mismatch flag is True.  
+   - **Analysis:** Potential misalignment with business goals may affect project success.  
+   - **Mitigation Recommendations:**  
+     - Review project objectives against strategic goals and adjust as necessary.
+
+9. **Governance Risk**  
+   - **Risk Level:** Low  
+   - **Breached Thresholds:** None  
+   - **Analysis:** Governance practices are being followed, with no missed meetings or violations reported.  
+   - **Mitigation Recommendations:**  
+     - Continue to uphold governance standards and conduct regular audits.
+
+10. **Reporting Risk**  
+    - **Risk Level:** Low  
+    - **Breached Thresholds:** None  
+    - **Analysis:** Reporting metrics are being met with timely updates.  
+    - **Mitigation Recommendations:**  
+    - Maintain current reporting practices and ensure transparency in communication.
+
+11. **Security Compliance Risk**  
+    - **Risk Level:** Low  
+    - **Breached Thresholds:** None  
+    - **Analysis:** Compliance with GDPR and successful audits indicate a strong security posture.  
+    - **Mitigation Recommendations:**  
+    - Continue to monitor compliance and prepare for upcoming audits.
+
+12. **Technical Integration Risk**  
+    - **Risk Level:** High  
+    - **Breached Thresholds:**  
+      - Interface failure count: Partially integrated third-party API with a high-risk flag.  
+   - **Analysis:** The integration of the Tally Finance API poses a significant risk to project timelines.  
+   - **Mitigation Recommendations:**  
+     - Allocate additional resources to address integration challenges and ensure timely resolution.
+
+13. **Risk Process Risk**  
+    - **Risk Level:** Low  
+    - **Breached Thresholds:** None  
+    - **Analysis:** Risk processes are in place with no unidentified risks reported.  
+    - **Mitigation Recommendations:**  
+    - Regularly review risk management processes to ensure effectiveness.
+
+14. **Stakeholder Risk**  
+    - **Risk Level:** Low  
+    - **Breached Thresholds:** None  
+    - **Analysis:** Stakeholder engagement is positive with a feedback score of 4.2.  
+    - **Mitigation Recommendations:**  
+    - Continue to engage stakeholders through regular updates and feedback sessions.
+
+15. **Release Risk**  
+    - **Risk Level:** Medium  
+    - **Breached Thresholds:** Incomplete release notes flag is True.  
+    - **Analysis:** Incomplete release documentation can lead to confusion during deployments.  
+    - **Mitigation Recommendations:**  
+    - Ensure that all release notes are completed and reviewed prior to deployment.
+
+16. **Agility Risk**  
+    - **Risk Level:** Medium  
+    - **Breached Thresholds:**  
+      - Retrospective action items pending threshold: 4 action items pending.  
+   - **Analysis:** Pending action items from retrospectives indicate potential delays in process improvement.  
+   - **Mitigation Recommendations:**  
+     - Assign ownership to action items and set deadlines for completion.
+
+17. **Overall Risk Score**  
+   - **Score Calculation:**  
+     - Delivery: 50  
+     - Velocity: 20  
+     - Backlog: 10  
+     - Budget: 10  
+     - Quality: 10  
+     - Issues: 5  
+     - Change Management: 5  
+     - Strategic Alignment: 50  
+     - Governance: 10  
+     - Reporting: 10  
+     - Security Compliance: 5  
+     - Technical Integration: 75  
+     - Risk Process: 5  
+     - Stakeholder: 5  
+     - Release: 50  
+     - Agility: 50  
+   - **Total Score:** 58  
+   - **Overall Risk Level:** Medium  
+
+**Conclusion:**  
+The project exhibits a medium overall risk level, with specific risks identified in delivery, technical integration, and strategic alignment. Timely action on the flagged risks and continuous monitoring will be essential to ensure successful project completion.
+Overall Risk Analysis: Overall Project Risk Analysis Report
+
+1. Executive Summary
+   - Project Name and Date of Analysis: Prevention of Data Poisoning Attacks in Federated Learning, Date of Analysis: 2025-04-05
+   - Overall Project Risk Classification: 🔴 High
+   - Summary of key risk contributors:
+     - Transaction anomalies: High severity issues including duplicate transactions, policy violations, and unusual fund flows.
+     - Resource shortages: Significant human resource turnover and high utilization rates across hardware and cloud resources.
+     - Project-level risks: Delays in delivery milestones, budget overruns, and compliance issues.
+   - Cross-domain interdependencies:
+     - SLA violations (Transaction) causing human burnout (Resource) leading to missed milestones (Project).
+     - High cloud spend (Resource) resulting in budget variance (Financial Exposure) impacting project execution (Project).
+   - Domain-Level Heatmap:
+     - Transaction Risk: High 🔴
+     - Resource Risk: High 🔴
+     - Project Risk: High 🔴
+
+2. Risk Breakdown by Category
+
+   a) Transaction Risk
+   - Total transactions analyzed: 500
+   - High-risk transaction count: 75
+   - Detailed analysis of anomalies:
+     - SLA violations: 10 incidents, severity: High, recurrence: 3 times in the last quarter.
+     - Protocol deviations: 5 instances of delayed approvals.
+     - Unauthorized access: 2 irregular transaction patterns detected.
+   - Compliance violations:
+     - Regulatory risks: 3 instances of policy violations.
+     - Internal policy breaches: 4 manual overrides noted.
+   - Scoring Parameters:
+     - Frequency of anomalies: 75 high-risk transactions out of 500 (15%).
+     - Severity level: High impact due to financial exposure.
+     - Risk propagation likelihood: High due to multiple interdependencies.
+   - Final Transaction Risk Score: 75
+   - Risk Classification: High 🔴
+   - Recommendations specific to transaction risks:
+     - Implement automated checks for duplicates and anomalies.
+     - Strengthen compliance training and audits.
+
+   b) Resource Risk
+   - Coverage of all resource domains:
+     - Human: 60 total assigned, 55 available, 70 required, 15 shortage.
+     - Hardware: 60 servers, 55 in use, 5 available, high utilization at 91.6%.
+     - Cloud: AWS compute utilization at 97.5%, exceeding the threshold.
+     - Software: 300 licenses total, 290 in use, 10 available, 20 shortage.
+     - Database: 6 instances, 6 in use, 0 available, utilization at 98%.
+   - Detailed metrics:
+     - Total vs in-use resources: High utilization across all domains.
+     - Shortages, outages, and SLA impact: Significant risks in human and cloud resources.
+     - Compliance concerns: Software licenses nearing expiration.
+   - Scoring Parameters:
+     - Resource utilization rate: High across all domains.
+     - Severity of shortages: Critical in human resources.
+     - SLA compliance and availability: At risk due to high utilization.
+   - Final Resource Risk Score: 83
+   - Risk Classification: High 🔴
+   - Specific mitigation recommendations per resource type:
+     - Hire additional contractors to fill human resource gaps.
+     - Procure new hardware to alleviate server and cloud resource strain.
+
+   c) Project Risk
+   - Timeline status:
+     - Milestone completion: 1 missed milestone out of 4 total, 25% (threshold is 30%).
+     - Sprint velocity: Average of 42 story points, below target of 50.
+   - Budget status:
+     - Estimated final spend exceeds budget by $150,000.
+   - Issue analysis:
+     - Open bugs: 5 critical issues reported.
+     - Scope creep: 2 change requests under review.
+   - Governance issues:
+     - Stakeholder engagement: Positive feedback score of 4.2.
+     - Ownership clarity: Needs improvement.
+   - Technical delivery quality:
+     - Bug density: 0.6, with a high code coverage of 92%.
+   - Scoring Parameters:
+     - Delivery progress vs plan: At risk due to missed milestones.
+     - Quality assurance metrics: High but needs monitoring.
+     - Team engagement and governance: Medium risk due to clarity issues.
+   - Final Project Risk Score: 58
+   - Risk Classification: Medium 🟡
+   - Specific recommendations tied to project execution and planning:
+     - Increase monitoring of epic progress and adjust sprint planning.
+     - Conduct root cause analysis of missed milestones.
+
+3. Correlation & Cross-Domain Analysis
+   - Inferred correlations:
+     1. Duplicate transactions (Transaction) → Delayed vendor payments (Resource) → Cloud downtime (Project).
+     2. Unusual fund flows (Transaction) → Budget variance (Financial Exposure) → Resource constraints (Resource).
+     3. High cloud spend (Resource) → Budget overruns (Financial Exposure) → Missed project milestones (Project).
+     4. Policy violations (Transaction) → Compliance issues (Resource) → Increased scrutiny on project delivery (Project).
+     5. Manual overrides (Transaction) → Increased workload on staff (Resource) → Human resource burnout (Project).
+     6. Unjustified transactions (Transaction) → Compliance flags (Resource) → Delayed approvals (Project).
+     7. Overdue payments (Financial Exposure) → Strained vendor relationships (Resource) → Delayed project deliverables (Project).
+     8. Resource turnover (Resource) → Knowledge gaps (Project) → Increased defect density (Quality).
+     9. SLA violations (Transaction) → Increased operational costs (Financial Exposure) → Budget constraints (Project).
+     10. Compliance issues (Transaction) → Audit findings (Resource) → Increased project oversight (Project).
+
+   - Dynamic Cause-Effect Matrix:
+   | Source Domain     | Cause Description                                   | Effect Domain     | Effect Description                               | Confidence Level      |
+   |-------------------|-----------------------------------------------------|-------------------|--------------------------------------------------|-----------------------|
+   | Transaction       | Duplicate transactions causing payment delays       | Resource           | Vendor payments delayed leading to cloud downtime | High                  |
+   | Transaction       | Unusual fund flows indicating fraud attempts        | Financial Exposure | Budget variance impacting resource allocation     | High                  |
+   | Resource          | High cloud spend exceeding budget                   | Project            | Missed project milestones due to financial strain | High                  |
+   | Transaction       | Policy violations leading to compliance flags       | Project            | Increased scrutiny affecting project delivery     | Medium                |
+   | Transaction       | Manual overrides increasing workload                 | Resource           | Human resource burnout affecting project timelines | Medium                |
+   | Transaction       | Unjustified transactions leading to compliance issues| Project            | Delayed approvals impacting project timelines     | Medium                |
+   | Financial Exposure | Overdue payments straining vendor relationships     | Project            | Delayed project deliverables due to vendor issues | High                  |
+   | Resource          | Resource turnover causing knowledge gaps            | Project            | Increased defect density affecting quality        | Medium                |
+   | Transaction       | SLA violations increasing operational costs         | Project            | Budget constraints affecting project execution    | High                  |
+   | Transaction       | Compliance issues leading to audit findings         | Project            | Increased oversight affecting project delivery    | Medium                |
+
+4. Overall Risk Scoring
+   - Step 1: Calculate Domain-Specific Scores
+     - Transaction Risk Score: 75
+     - Resource Risk Score: 83
+     - Project Risk Score: 58
+   - Step 2: Apply Domain Weights
+     - Transaction: 30%
+     - Resource: 35%
+     - Project: 35%
+   - Weighted Risk Table
+   | Domain         | Raw Score (0–100) | Weight (%) | Weighted Score      |
+   |----------------|--------------------|------------|---------------------|
+   | Transaction    | 75                 | 30%        | 22.5                |
+   | Resource       | 83                 | 35%        | 29.05               |
+   | Project        | 58                 | 35%        | 20.3                |
+   | Total          |                    |            | 71.85               |
+   - Step 4: Classify Final Risk Score
+     - Final Score: 71.85
+     - Risk Classification: 🔴 High
+
+5. Observations & Alerts
+   - Identify Emerging Risks:
+     - Gradual rise in transaction anomalies indicating potential fraud.
+     - Increased frequency of overdue payments signaling vendor relationship strain.
+   - Spot Blind Spots:
+     - Lack of visibility into facility uptime and team availability.
+     - No monitoring of third-party service performance.
+   - Alert on External Dependency Risks:
+     - Monitor vendor changes that could affect project timelines.
+     - Stay updated on regulatory changes impacting compliance requirements.
+
+This report provides a comprehensive analysis of the project's risk landscape, highlighting critical areas for immediate attention and strategic recommendations to mitigate risks effectively. Regular monitoring and proactive measures will be essential to maintain the project's integrity and financial health.
+
+
+Project: IPM/
+Transaction Analysis: Transaction Risk Analysis Report
+
+Project ID: PRJ-SEC-002  
+Project Name: Prevention of Data Poisoning Attacks in Federated Learning  
+Reporting Period: 2025-Q1  
+Prepared By: Project Finance Team  
+Report Date: 2025-04-05  
+Currency: USD  
+
+1. Integrity & Anomalies
+   - Duplicate Transactions:
+     - Severity: High
+     - Root Cause: Lack of stringent checks in the transaction processing system.
+     - Mitigation Steps: Implement automated duplicate detection systems and enhance validation rules during transaction entry.
+   
+   - Outlier Detection:
+     - Severity: High
+     - Root Cause: Anomalies detected in transaction patterns.
+     - Mitigation Steps: Regularly monitor transaction data for outliers and establish thresholds for flagging unusual transactions.
+   
+   - Invoice Mismatches:
+     - Severity: Medium
+     - Root Cause: Invoice and purchase order discrepancies with a mismatch ratio of 0.18.
+     - Mitigation Steps: Enforce stricter purchase order-invoice matching validation protocols.
+
+2. Compliance
+   - Policy Violations:
+     - Severity: High
+     - Root Cause: Unapproved vendor invoicing and unjustified hardware purchases.
+     - Mitigation Steps: Conduct compliance training and establish a review process for vendor invoices.
+   
+   - Manual Overrides:
+     - Severity: Medium
+     - Root Cause: Manual overrides occurred 4 times indicating potential weaknesses in the approval process.
+     - Mitigation Steps: Limit manual overrides to exceptional cases and implement a logging system for all overrides.
+   
+   - Approval Process Bypasses:
+     - Severity: High
+     - Root Cause: Invoice approval bypasses detected (3 instances).
+     - Mitigation Steps: Strengthen approval workflows and ensure all transactions go through proper channels.
+
+3. Fraud Risk
+   - Multiple Payments to Same Vendor/Account:
+     - Severity: High
+     - Root Cause: Evidence of multi-payments to the same account.
+     - Mitigation Steps: Flag and freeze suspicious accounts, and conduct a thorough review of payment histories.
+   
+   - Unusual Fund Flows:
+     - Severity: Medium
+     - Root Cause: Unexplained fund flows totaling $47,000.
+     - Mitigation Steps: Investigate the source of these fund flows and implement tighter controls on fund transfers.
+   
+   - Unjustified Transactions:
+     - Severity: High
+     - Root Cause: Transactions without proper justification.
+     - Mitigation Steps: Establish clear criteria for transaction justification and conduct regular audits.
+
+4. Vendor Risk
+   - Vendor Performance Issues:
+     - Severity: Medium
+     - Root Cause: 3 high-risk vendors identified with compliance issues such as late deliverables and invoice discrepancies.
+     - Mitigation Steps: Conduct vendor risk re-evaluation and enforce performance improvement plans.
+   
+   - Compliance Flags:
+     - Severity: High
+     - Root Cause: Multiple compliance issues reported with vendors.
+     - Mitigation Steps: Increase vendor compliance monitoring and require corrective action plans for flagged vendors.
+   
+   - High Dependency Vendors:
+     - Severity: Medium
+     - Root Cause: Dependency on a limited number of vendors for critical services.
+     - Mitigation Steps: Diversify vendor base to mitigate risks associated with vendor dependency.
+
+5. Financial Exposure
+   - Budget Variance:
+     - Severity: High
+     - Root Cause: Estimated final spend exceeds budget by $150,000.
+     - Mitigation Steps: Tighten budget controls and conduct regular financial reviews.
+   
+   - Overdue Payments:
+     - Severity: High
+     - Root Cause: 3 overdue payables totaling $120,000.
+     - Mitigation Steps: Implement payment tracking systems and establish clear payment terms with vendors.
+   
+   - Credit Exposure:
+     - Severity: Medium
+     - Root Cause: Credit limit utilization at 73.3%.
+     - Mitigation Steps: Monitor credit utilization closely and consider negotiating higher credit limits with financial institutions.
+   
+   - Spend over Authorization:
+     - Severity: Medium
+     - Root Cause: Current spend exceeds budgeted amounts.
+     - Mitigation Steps: Enforce stricter spending authorization processes.
+
+6. Operational Risk
+   - Timeline Impact:
+     - Severity: Medium
+     - Root Cause: Schedule variance of 8 days.
+     - Mitigation Steps: Identify root causes of delays and implement corrective measures to keep the project on track.
+   
+   - Resource Risk:
+     - Severity: Medium
+     - Root Cause: Resource turnover rate at 12.5%.
+     - Mitigation Steps: Enhance retention strategies and provide training for new hires.
+   
+   - High Cloud Spend:
+     - Severity: High
+     - Root Cause: Monthly cloud spend exceeds budget threshold ($16,000).
+     - Mitigation Steps: Review cloud usage and optimize resource allocation to reduce costs.
+
+7. Audit & Traceability
+   - Audit Trail Completeness:
+     - Severity: Medium
+     - Root Cause: Audit issues count stands at 3 from the last audit.
+     - Mitigation Steps: Improve documentation processes and ensure all transactions are traceable.
+   
+   - Last Audit Findings:
+     - Severity: High
+     - Root Cause: Issues related to unjustified hardware purchases and unapproved vendor invoicing.
+     - Mitigation Steps: Address audit findings promptly and implement recommendations from the audit report.
+   
+   - Mitigation Actions Taken:
+     - Severity: Medium
+     - Root Cause: Recommendations from the last audit need to be acted upon.
+     - Mitigation Steps: Assign responsibility for implementing audit recommendations to specific team members.
+
+8. Quantitative Score
+   - Risk Rating: High
+   - Transaction Risk Score: 85 (on a scale of 0–100)
+
+9. Categorization
+   - Transaction Type: Operational Expenditures
+   - Department/Cost Center: Project Finance Team
+   - Risk Category: Compliance, Fraud, Financial Exposure
+
+This report highlights critical areas of risk associated with the transactions of the project. It is essential to address these issues promptly to ensure the project's success and compliance with regulatory standards. Regular monitoring and proactive measures will mitigate potential risks effectively.
+Resource Analysis: Resource Risk Analysis Report  
+Report Generated On: 2025-04-06  
+Project Name: Cloud-native Microservices Migration  
+Department: Enterprise IT  
+Risk Assessment Date: 2025-04-06  
+
+Overall Risk Level: High  
+Overall Risk Score: 85  
+
+1. **Category-wise Risk Assessments**  
+   - **Human Resources**  
+     - Total Assigned: 60  
+     - Available: 55  
+     - Required: 70  
+     - Shortage: 15 (25% of the required resources)  
+     - Resignation Rate: 5% (3 resignations in the last 30 days)  
+     - Utilization Rate: 92% (above the max threshold of 90%)  
+     - Turnover Risk: 14.5% (above the 10% threshold)  
+     - Skill Gaps: Kubernetes, GraphQL (2 skills below the threshold of 3)  
+     - Risk Severity: High  
+     - SLA Impact: Yes  
+     - Recovery Time: 21 days  
+     - Compliance Risk: No  
+     - **Mitigation Recommendations**:  
+       - Hire contractors to fill gaps.  
+       - Initiate skill development programs for current staff.  
+
+   - **Hardware Resources**  
+     - Servers  
+       - Total: 60, In Use: 55, Available: 5  
+       - Utilization Rate: 91.6% (above the 90% threshold)  
+       - Issues: 4 servers overheating, 2 nearing end-of-life  
+       - Risk Severity: High  
+       - SLA Impact: Yes  
+       - Recovery Time: 10 days  
+       - Compliance Risk: No  
+       - **Mitigation Recommendations**:  
+         - Procure 10 new servers.  
+         - Schedule phased decommissioning of legacy units.  
+         
+     - CPU  
+       - Total Cores: 1024, In Use: 950, Available: 74  
+       - Utilization Rate: 92.8% (overloaded cores at 12%)  
+       - Risk Severity: High  
+       - SLA Impact: Yes  
+       - Recovery Time: 8 days  
+       - Compliance Risk: No  
+       - **Mitigation Recommendations**:  
+         - Load-balance workloads.  
+         - Upgrade CPUs on critical nodes.  
+
+     - GPU  
+       - Total Units: 40, In Use: 38, Available: 2  
+       - Utilization Rate: 95% (20% overloaded)  
+       - Risk Severity: Critical  
+       - SLA Impact: Yes  
+       - Recovery Time: 12 days  
+       - Compliance Risk: Yes  
+       - **Mitigation Recommendations**:  
+         - Expand GPU cluster.  
+         - Lease cloud-based GPU acceleration temporarily.  
+
+   - **Cloud Resources**  
+     - AWS Compute  
+       - Total Instances: 200, In Use: 195, Shortage: 25  
+       - Utilization Rate: 97.5% (exceeds budget threshold)  
+       - Risk Severity: Critical  
+       - SLA Impact: Yes  
+       - Recovery Time: 14 days  
+       - Compliance Risk: Yes  
+       - **Mitigation Recommendations**:  
+         - Convert to reserved instances.  
+         - Reallocate budget to cover excess costs.  
+
+     - AWS Storage  
+       - Used Capacity: 480 TB, Available: 20 TB  
+       - Utilization Rate: 96%  
+       - Risk Severity: High  
+       - SLA Impact: Yes  
+       - Recovery Time: 7 days  
+       - Compliance Risk: Yes  
+       - **Mitigation Recommendations**:  
+         - Archive old data.  
+         - Request capacity extension.  
+
+   - **Software Resources**  
+     - Licenses Total: 300, In Use: 290, Available: 10  
+     - Shortage: 20, Expiring Soon: 18  
+     - Risk Severity: Medium  
+     - SLA Impact: No  
+     - Recovery Time: 3 days  
+     - Compliance Risk: Yes  
+     - **Mitigation Recommendations**:  
+       - Renew expiring licenses.  
+       - Monitor license assignment closely.  
+
+   - **Database Resources**  
+     - Total Instances: 6, In Use: 6, Available: 0  
+     - Utilization Rate: 98%  
+     - Issues: High read/write contention, Autovacuum not running optimally  
+     - Risk Severity: High  
+     - SLA Impact: Yes  
+     - Recovery Time: 6 days  
+     - Compliance Risk: Yes  
+     - **Mitigation Recommendations**:  
+       - Optimize query patterns.  
+       - Scale read replicas.  
+       - Tune autovacuum settings.  
+
+2. **Identified Issues and Potential Impacts**  
+   - High resource utilization across human, hardware, and cloud resources leading to potential burnout and SLA breaches.  
+   - Shortages in critical human resources can delay project milestones and affect deliverables.  
+   - Compliance risks due to software licenses nearing expiration and cloud compliance issues could lead to legal penalties.  
+   - Over-dependence on specific hardware resources (e.g., GPUs) creates a single point of failure.  
+
+3. **Rule-based Justification**  
+   - Human Resources:  
+     - Shortage of 15 resources exceeds the 20% threshold.  
+     - Resignation rate of 5% meets the threshold.  
+     - Utilization exceeds the maximum threshold of 90%.  
+   - Hardware Resources:  
+     - Utilization above 90% and overheating issues present critical risks.  
+     - End-of-life servers without budget for replacement.  
+   - Cloud Resources:  
+     - AWS compute utilization exceeds 95% and budget constraints exceed 25%.  
+   - Software Resources:  
+     - License utilization exceeds 95%, with expiring licenses approaching the threshold.  
+   - Database Resources:  
+     - Utilization exceeds 95% with high latency issues affecting performance.  
+
+4. **Mitigation Recommendations**  
+   - **Immediate Actions**:  
+     - Hire contractors for immediate skill shortages in human resources.  
+     - Procure additional servers and upgrade critical hardware.  
+     - Renew software licenses before expiration.  
+   - **Strategic Actions**:  
+     - Invest in training programs to fill skill gaps over time.  
+     - Establish a proactive compliance monitoring system for licenses and regulations.  
+     - Diversify cloud resource providers to mitigate vendor dependency.  
+
+Next Review Date: 2025-05-01  
+
+This report outlines the critical risks associated with the Cloud-native Microservices Migration project and provides actionable recommendations to mitigate these risks effectively.
+Project Analysis: Project Risk Analysis Report for PRJ-2025-001
+
+Project Overview:
+- Project Name: Enterprise Resource Management System
+- Project Description: Development and deployment of an ERM platform to automate and streamline HR, Finance, and Logistics processes across global business units.
+- Current Phase: Execution
+- Timeline: 10 months (Start Date: 2024-11-15, Revised End Date: 2025-09-15)
+
+Risk Categories Analysis:
+
+1. Delivery Risk: Medium
+   - Breached Thresholds:
+     - Missed Milestone: Finance Module Delivery was delayed by 15 days.
+   - Analysis:
+     - The delay in the Finance Module Delivery is attributed to legacy system integration issues.
+   - Mitigation Recommendations:
+     - Enhance integration testing with legacy systems.
+     - Allocate additional resources to expedite the integration process.
+
+2. Velocity Risk: Medium
+   - Breached Thresholds:
+     - Average velocity (42 story points) is below the commitment (50 story points).
+   - Analysis:
+     - The velocity drop indicates potential issues in backlog refinement and task prioritization.
+   - Mitigation Recommendations:
+     - Conduct backlog refinement sessions with stakeholders.
+     - Review and adjust sprint planning to align with team capacity.
+
+3. Backlog Risk: Low
+   - Breached Thresholds:
+     - No significant aging backlog or unrefined story ratio issues detected.
+   - Analysis:
+     - The backlog appears well-managed with no critical delays.
+
+4. Budget Risk: Low
+   - Breached Thresholds:
+     - Utilized budget is within acceptable limits with no significant cost overruns.
+   - Analysis:
+     - The current burn rate is sustainable with a remaining budget of $135,000.
+   - Mitigation Recommendations:
+     - Continue monitoring budget utilization closely.
+
+5. Quality Risk: Low
+   - Breached Thresholds:
+     - Defect density (0.6) and escaped defects (3) are within acceptable levels.
+   - Analysis:
+     - Quality metrics indicate that the project is maintaining a high standard.
+   
+6. Issue Risk: Medium
+   - Breached Thresholds:
+     - Open issues: 1 high-priority bug (Session timeout under load).
+   - Analysis:
+     - The identified issue could impact user experience and system reliability.
+   - Mitigation Recommendations:
+     - Prioritize the resolution of this bug in the next sprint.
+
+7. Change Management Risk: Low
+   - Breached Thresholds:
+     - No significant scope changes or late change requests.
+   - Analysis:
+     - The change requests are being managed effectively.
+
+8. Strategic Alignment Risk: Medium
+   - Breached Thresholds:
+     - Strategic objective mismatch flag is present.
+   - Analysis:
+     - There may be features not aligned with business goals.
+   - Mitigation Recommendations:
+     - Reassess project features against strategic objectives and adjust as necessary.
+
+9. Governance Risk: Low
+   - Breached Thresholds:
+     - No steering committee meeting misses or governance violations reported.
+   - Analysis:
+     - Governance processes are functioning well.
+
+10. Reporting Risk: Low
+    - Breached Thresholds:
+      - KPI misses and reporting delays are within acceptable limits.
+    - Analysis:
+      - Reporting mechanisms are effective at this stage.
+
+11. Security Compliance Risk: Low
+    - Breached Thresholds:
+      - No open security incidents or compliance violations reported.
+    - Analysis:
+      - The project is compliant with security standards.
+
+12. Technical Integration Risk: High
+    - Breached Thresholds:
+      - High risk flag due to partially integrated Tally Finance API.
+    - Analysis:
+      - Integration issues with third-party APIs could jeopardize project timelines.
+    - Mitigation Recommendations:
+      - Increase focus on API integration and allocate additional resources to resolve issues.
+
+13. Risk Process Risk: Medium
+    - Breached Thresholds:
+      - Lack of risk response plan flag is present.
+    - Analysis:
+      - Potential unidentified risks could affect project delivery.
+    - Mitigation Recommendations:
+      - Develop and implement a comprehensive risk response plan.
+
+14. Stakeholder Risk: Low
+    - Breached Thresholds:
+      - Stakeholder participation rate is adequate, with no negative feedback.
+    - Analysis:
+      - Stakeholder engagement is positive.
+
+15. Release Risk: Medium
+    - Breached Thresholds:
+      - Incomplete release notes flag is present.
+    - Analysis:
+      - Incomplete documentation may hinder future deployments.
+    - Mitigation Recommendations:
+      - Ensure thorough documentation for all releases.
+
+16. Agility Risk: Medium
+    - Breached Thresholds:
+      - Action items from the last retrospective are pending.
+    - Analysis:
+      - Delays in addressing action items could affect team adaptability.
+    - Mitigation Recommendations:
+      - Assign ownership of action items to ensure timely completion.
+
+Overall Risk Score: 68 (High)
+- Risk Level: High
+
+Conclusion:
+The project is currently experiencing several medium and high-level risks that require immediate attention, particularly in delivery, velocity, and technical integration. By implementing the recommended actions, the project team can mitigate these risks and improve overall project health. Continuous monitoring and proactive management will be critical in navigating the upcoming phases of the project.
+Overall Risk Analysis: Overall Project Risk Analysis Report
+
+1. Executive Summary
+   - Project Name and Date of Analysis: Prevention of Data Poisoning Attacks in Federated Learning, April 2025
+   - Overall Project Risk Classification: 🔴 High
+   - Summary of key risk contributors:
+     - Transaction anomalies including duplicate transactions and policy violations.
+     - Resource shortages and overutilization, particularly in human and hardware resources.
+     - Project-level risks such as delivery delays and budget overruns.
+   - Cross-domain interdependencies:
+     - SLA violations (Transaction) causing human burnout (Resource) leading to missed milestones (Project).
+   - Domain-Level Heatmap:
+     - Transaction Risk: High 🔴
+     - Resource Risk: High 🔴
+     - Project Risk: High 🔴
+
+2. Risk Breakdown by Category
+
+   a) Transaction Risk
+   - Total transactions analyzed: 500
+   - High-risk transaction count: 15
+   - Detailed analysis of anomalies:
+     - SLA violations: 5 instances, severity: High, recurrence: 3 times.
+     - Protocol deviations: 4 instances, severity: High.
+     - Unauthorized access: 2 instances, severity: Medium.
+   - Compliance violations:
+     - Regulatory risks: 3 instances of unapproved vendor invoicing.
+     - Internal policy breaches: 4 instances of manual overrides.
+   - Scoring Parameters:
+     - Frequency of anomalies: 15 high-risk transactions.
+     - Severity level: High impact on project integrity.
+     - Risk propagation likelihood: High.
+   - Final Transaction Risk Score: 85
+   - Risk Classification: High 🔴
+   - Recommendations specific to transaction risks:
+     - Implement automated duplicate detection systems.
+     - Enhance validation rules during transaction entry.
+
+   b) Resource Risk
+   - Coverage of all resource domains:
+     - Human: Total Assigned: 60, Available: 55, Required: 70, Shortage: 15 (25%).
+     - Hardware: Total: 60, In Use: 55, Available: 5, Utilization Rate: 91.6%.
+     - Cloud: AWS Compute: Total Instances: 200, In Use: 195, Utilization Rate: 97.5%.
+   - Detailed metrics:
+     - Shortages: 15 human resources, 5 hardware resources.
+     - SLA impact: Yes, due to high utilization rates.
+     - Compliance concerns: Software licenses nearing expiration.
+   - Scoring Parameters:
+     - Resource utilization rate: High.
+     - Severity of shortages: High.
+     - SLA compliance and availability: Medium.
+   - Final Resource Risk Score: 85
+   - Risk Classification: High 🔴
+   - Specific mitigation recommendations per resource type:
+     - Hire contractors to fill human resource gaps.
+     - Procure additional servers to reduce hardware strain.
+
+   c) Project Risk
+   - Timeline status:
+     - Milestone completion vs plan: Delayed by 15 days.
+     - Sprint velocity: Average 42 story points, below commitment of 50.
+   - Budget status:
+     - Spend exceeds budget by $150,000.
+   - Issue analysis:
+     - Open bugs: 1 high-priority bug affecting user experience.
+     - Scope creep: Minor adjustments noted.
+   - Governance issues:
+     - Stakeholder engagement level: Adequate.
+     - Ownership clarity: Needs improvement.
+   - Technical delivery quality:
+     - Bug density: 0.6, acceptable levels.
+   - Scoring Parameters:
+     - Delivery progress vs plan: Medium.
+     - Quality assurance metrics: Low.
+     - Team engagement and governance: Medium.
+   - Final Project Risk Score: 68
+   - Risk Classification: High 🔴
+   - Specific recommendations tied to project execution and planning:
+     - Enhance integration testing with legacy systems.
+     - Allocate additional resources to expedite integration.
+
+3. Correlation & Cross-Domain Analysis
+   - Inferred correlations:
+     1. Duplicate transactions caused delays in payment processing, leading to vendor dissatisfaction.
+     2. High resource utilization (human) resulted in burnout, causing missed project milestones.
+     3. Unjustified transactions led to compliance flags, increasing scrutiny on vendor relationships.
+     4. Delayed vendor payments resulted in cloud service interruptions, affecting project timelines.
+     5. High cloud spend due to unexpected resource usage impacted budget allocations, leading to financial strain.
+     6. Overdue payments caused by transaction anomalies led to strained vendor relationships.
+     7. Resource shortages in human capital delayed integration testing, impacting overall project delivery.
+     8. Compliance violations increased the risk of audits, leading to potential project delays.
+     9. High turnover rates in human resources led to skill gaps, affecting project quality and delivery timelines.
+   - Dynamic Cause-Effect Matrix:
+   
+   | Source Domain     | Cause Description                                         | Effect Domain     | Effect Description                              | Confidence Level      |
+   |-------------------|----------------------------------------------------------|-------------------|------------------------------------------------|-----------------------|
+   | Transaction Risk  | Duplicate transactions delayed vendor payments           | Resource Risk     | Vendor dissatisfaction led to resource shortages | High                  |
+   | Resource Risk     | High utilization caused burnout                           | Project Risk      | Missed project milestones                       | High                  |
+   | Transaction Risk  | Unjustified transactions caused compliance flags         | Vendor Risk       | Increased scrutiny on vendor relationships      | Medium                |
+   | Resource Risk     | Delayed vendor payments caused cloud service interruptions| Project Risk      | Impacted project timelines                      | High                  |
+   | Financial Risk    | High cloud spend impacted budget allocations             | Project Risk      | Financial strain on project                     | High                  |
+   | Transaction Risk  | Overdue payments strained vendor relationships           | Vendor Risk       | Increased risk of vendor non-compliance        | Medium                |
+   | Resource Risk     | Shortages delayed integration testing                    | Project Risk      | Affected overall project delivery               | High                  |
+   | Compliance Risk    | Compliance violations increased audit risks              | Project Risk      | Potential project delays                        | Medium                |
+   | Resource Risk     | High turnover led to skill gaps                          | Project Risk      | Affected project quality and delivery timelines | High                  |
+
+4. Overall Risk Scoring
+   - Step 1: Calculate Domain-Specific Scores
+     - Transaction Risk Score: 85
+     - Resource Risk Score: 85
+     - Project Risk Score: 68
+   - Step 2: Apply Domain Weights
+     - Transaction: 30%
+     - Resource: 35%
+     - Project: 35%
+   - Step 3: Generate Weighted Risk Table
+
+   | Domain         | Raw Score (0–100) | Weight (%) | Weighted Score      |
+   |----------------|-------------------|------------|---------------------|
+   | Transaction    | 85                | 30%        | 25.5                |
+   | Resource       | 85                | 35%        | 29.75               |
+   | Project        | 68                | 35%        | 23.8                |
+   | Total          |                   |            | 79.05               |
+
+   - Step 4: Classify Final Risk Score
+     - Final Score: 79.05
+     - Risk Classification: 🔴 High
+
+5. Observations & Alerts
+   - Identify Emerging Risks:
+     - Gradual rise in transaction anomalies indicates a potential for increased fraud risk.
+     - High resource utilization trends suggest a looming burnout risk among team members.
+   - Spot Blind Spots:
+     - Lack of visibility into third-party service performance could lead to unexpected project delays.
+   - Alert on External Dependency Risks:
+     - Monitor for vendor instability that could impact project timelines and resource availability.
+
+This report provides a comprehensive analysis of the risks facing the Prevention of Data Poisoning Attacks in Federated Learning project. Immediate action is required to address identified risks and ensure project success. Regular monitoring and proactive management will be critical in navigating the upcoming phases of the project.
+
+
