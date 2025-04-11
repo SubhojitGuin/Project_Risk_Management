@@ -3,7 +3,8 @@ from final_crew import MarketAnalysisCrew, MitigationStrategiesAnalysisCrew, Ove
 from datetime import datetime
 import os
 import json
-from utils.rag_utils import get_answer_from_chain_local, get_vector_store , get_qdrant_vector_store
+from utils.rag_utils import get_answer_from_chain_local, get_vector_store, get_qdrant_vector_store
+from utils.qdrant_utils import delete_qdrant_collection
 from utils.mail_utils import send_mail
 
 
@@ -78,4 +79,5 @@ for folder in subfolders:
         "output/mitigation_strategies.txt",
     ]
     
+    delete_qdrant_collection(folder[:-1])
     get_qdrant_vector_store(paths, folder[:-1])

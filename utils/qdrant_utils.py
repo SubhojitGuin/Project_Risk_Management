@@ -2,6 +2,7 @@ from langchain_qdrant import QdrantVectorStore
 from langchain_openai import OpenAIEmbeddings
 import os
 from dotenv import load_dotenv
+from qdrant_client import QdrantClient
 load_dotenv()
 
 os.environ['OPENAI_API_KEY'] = os.getenv("OPENAI_API_KEY")
@@ -28,3 +29,11 @@ def get_qdrant_collection(collection_name):
         api_key=api_key,
         prefer_grpc=True
     )
+
+def delete_qdrant_collection(collection_name):
+    qdrant_client = QdrantClient(
+        url=url,
+        api_key=api_key,
+        prefer_grpc=True
+    )
+    qdrant_client.delete_collection(collection_name=collection_name)
