@@ -2,8 +2,8 @@
 from typing import List, Any
 from fastapi import FastAPI
 from pydantic import BaseModel, Field
-from utils.s3_utils import get_report_url , download_file
-from utils.rag_utils import get_answer_from_chain, get_vector_store
+from utils.s3_utils import get_report_url 
+from utils.rag_utils import get_answer_from_chain_qdrant
 import os
 
 os.makedirs("chat_db", exist_ok=True)
@@ -26,14 +26,6 @@ async def get_response(request:Project):
     file_key = f"{project_id}/report.txt"
     file_url = get_report_url(file_key)
 
-    # Download files from S3
-    download_file(f"{project_id}/report.txt", "chat_db/report.txt")
-    download_file(f"{project_id}/mitigation_strategies.txt", "chat_db/mitigation_strategies.txt")
-    
-    # Create Db from Downloaded files
-    file_paths = ["chat_db/report.txt", "chat_db/mitigation_strategies.txt"]
-    get_vector_store(file_paths)
-
     print("file_url: " + str(file_url))
     return {"file_url" : str(file_url)}
 
@@ -47,7 +39,7 @@ async def get_answer(request: Question):
     print("Question: " + question)
 
     # Get answer from chain
-    answer = get_answer_from_chain(question)
+    answer = get_answer_from_chain_qdrant(question, project_id)
     print("Answer: " + answer["output_text"])
     return {"answer": answer["output_text"]}
 

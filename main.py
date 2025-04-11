@@ -3,8 +3,9 @@ from final_crew import MarketAnalysisCrew, MitigationStrategiesAnalysisCrew, Ove
 from datetime import datetime
 import os
 import json
-from utils.rag_utils import get_answer_from_chain, get_vector_store
+from utils.rag_utils import get_answer_from_chain_local, get_vector_store , get_qdrant_vector_store
 from utils.mail_utils import send_mail
+
 
 os.makedirs('output', exist_ok=True)
 os.makedirs('project_details', exist_ok=True)
@@ -65,10 +66,16 @@ for folder in subfolders:
         f.write(f"Overall Risk Analysis: {risk_analysis}\n")
         f.write("\n\n")
 
-    
     upload_file(f"{folder}report.txt", "output/report.txt")
     upload_file(f"{folder}mitigation_strategies.txt", "output/mitigation_strategies.txt")
 
     get_vector_store(["output/report.txt"])
-    answer = get_answer_from_chain("Provide the details of all the risks identified as critical and High severity risks in the project report.")
+    answer = get_answer_from_chain_local("Provide the details of all the risks identified as critical and High severity risks in the project report.")
     send_mail(answer["output_text"] , folder[:-1])
+
+    paths = [
+        "output/report.txt", 
+        "output/mitigation_strategies.txt",
+    ]
+    
+    get_qdrant_vector_store(paths, folder[:-1])

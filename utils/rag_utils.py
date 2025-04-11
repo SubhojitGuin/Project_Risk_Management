@@ -8,6 +8,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from dotenv import load_dotenv
 from langchain.chains.question_answering import load_qa_chain
 from langchain_community.document_loaders import TextLoader
+from utils.qdrant_utils import create_qdrant_collection, get_qdrant_collection
 
 
 load_dotenv()
@@ -21,11 +22,17 @@ def get_text_loader(path_list):
         document_loader.extend(loader.load())
     return document_loader
 
+# def get_text_chunks(docs):
+#     chunks = []
+#     for doc in docs:
+#         text_splitter = RecursiveCharacterTextSplitter(chunk_size=2000 , chunk_overlap=100)
+#         chunks += text_splitter.split_text(doc.page_content)
+#     return chunks
+
 def get_text_chunks(docs):
     chunks = []
-    for doc in docs:
-        text_splitter = RecursiveCharacterTextSplitter(chunk_size=2000 , chunk_overlap =100)
-        chunks += text_splitter.split_text(doc.page_content)
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=2000 , chunk_overlap=100)
+    chunks.extend(text_splitter.split_documents(docs))
     return chunks
 
 def get_vector_store(path_list):
@@ -34,9 +41,16 @@ def get_vector_store(path_list):
     docs = get_text_loader(path_list)
     text_chunks = get_text_chunks(docs)
     embeddings = OpenAIEmbeddings()
-    vector_store = FAISS.from_texts(text_chunks, embedding = embeddings)
+    vector_store = FAISS.from_documents(text_chunks, embedding=embeddings)
     vector_store.save_local("vector_store")
     return vector_store
+    
+def get_qdrant_vector_store(path_list, collection_name):
+    """Create a Qdrant vector store from text files."""
+
+    docs = get_text_loader(path_list)
+    text_chunks = get_text_chunks(docs)
+    create_qdrant_collection(text_chunks, collection_name)
 
 def get_conversational_chain():
     prompt_template = """
@@ -55,11 +69,18 @@ def get_conversational_chain():
     
     llm = ChatOpenAI(model=os.getenv("MODEL"), temperature=0.25)
     prompt = PromptTemplate(template = prompt_template , input_variables={"context","question"})
-    chain = load_qa_chain(llm , chain_type="stuff" , prompt=prompt)
+    chain = load_qa_chain(llm, chain_type="stuff", prompt=prompt)
     return chain
 
-def get_answer_from_chain(question : str):
+def get_answer_from_chain_local(question : str):
     db = FAISS.load_local("vector_store", OpenAIEmbeddings(), allow_dangerous_deserialization=True)
+    context = db.similarity_search(question, k=5)
+    chain = get_conversational_chain()
+    answer = chain.invoke({"input_documents": context, "question": question})
+    return answer
+
+def get_answer_from_chain_qdrant(question : str, collection_name : str):
+    db = get_qdrant_collection(collection_name)
     context = db.similarity_search(question, k=5)
     chain = get_conversational_chain()
     answer = chain.invoke({"input_documents": context, "question": question})
@@ -70,7 +91,7 @@ if __name__ == "__main__":
     path_list = ["output/report.txt", "output/mitigation_strategies.txt"]
     vector_store = get_vector_store(path_list)
     question = "Provide the details of all the risks identified as critical and High severity risks in the project report."
-    answer = get_answer_from_chain(question)
+    answer = get_answer_from_chain_local(question)
     print(answer["output_text"])
 
 # Answer the following question in a detailed manner based only on the provided context. 
