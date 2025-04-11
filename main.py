@@ -55,8 +55,10 @@ for folder in subfolders:
         risk_analysis = f.read()
     MitigationStrategiesAnalysisCrew().crew().kickoff({"risk_analysis": risk_analysis})
 
-    with open("output/report.txt", 'a') as f:
+    with open("output/report.txt", 'w') as f:
         f.write(f"Project: {folder}\n")
+    
+    with open("output/report.txt", 'a') as f:
         f.write(f"Transaction Analysis: {transaction_risks}\n")
         f.write(f"Resource Analysis: {resources_risks}\n")
         f.write(f"Project Analysis: {project_risks}\n")

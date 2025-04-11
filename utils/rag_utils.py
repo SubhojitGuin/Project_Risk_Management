@@ -53,7 +53,7 @@ def get_conversational_chain():
     Question: {question}"""
 
     
-    llm = ChatOpenAI(model="gpt-3.5-turbo-0125", temperature=0)
+    llm = ChatOpenAI(model=os.getenv("MODEL"), temperature=0.25)
     prompt = PromptTemplate(template = prompt_template , input_variables={"context","question"})
     chain = load_qa_chain(llm , chain_type="stuff" , prompt=prompt)
     return chain

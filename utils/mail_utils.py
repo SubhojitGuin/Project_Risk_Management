@@ -28,6 +28,7 @@ def send_mail(content, project_key):
         server.login(email, password)  
         server.send_message(message)
     del message["To"]
+    del message["Subject"]
 
 if __name__ == "__main__":
     content = "This is a test email."
