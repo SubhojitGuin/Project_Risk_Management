@@ -2,7 +2,7 @@
 from typing import List, Any
 from fastapi import FastAPI
 from pydantic import BaseModel, Field
-from utils.s3_utils import get_report_url 
+from utils.s3_utils import get_report_url, validate_file
 from utils.rag_utils import get_answer_from_chain_qdrant
 import os
 
@@ -25,6 +25,10 @@ async def get_response(request:Project):
     # Fetch report url from s3
     file_key = f"{project_id}/report.txt"
     file_url = get_report_url(file_key)
+
+    if not validate_file(file_key):
+        print("Invalid Project ID: " + project_id) # Add a message to indicate that the project ID is invalid
+        return {"error": "Invalid Project ID"}
 
     print("file_url: " + str(file_url))
     return {"file_url" : str(file_url)}

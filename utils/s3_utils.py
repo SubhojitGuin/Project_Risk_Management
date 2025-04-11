@@ -14,7 +14,6 @@ s3_client = boto3.client(
 )
 
 def list_subfolders(prefix=''):
-    
     paginator = s3_client.get_paginator('list_objects_v2')
     result = set()  # Use a set to avoid duplicates
     for page in paginator.paginate(Bucket=PUBLIC_BUCKET, Prefix=prefix, Delimiter='/'):
@@ -32,6 +31,14 @@ def upload_file(file_key, local_path):
 
 def get_report_url(file_key):
     return f"https://{PUBLIC_BUCKET}.s3.{REGION}.amazonaws.com/{file_key}"
+
+def validate_file(file_key):
+    try:
+        s3_client.head_object(Bucket=PUBLIC_BUCKET, Key=file_key)
+        return True
+    except Exception as e:
+        print(f"Error: {e}")
+        return False
 
 if __name__ == "__main__":
     bucket_name = PUBLIC_BUCKET
