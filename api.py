@@ -1,6 +1,7 @@
 # -- import necessary libraries --
 from typing import List, Any
-from fastapi import FastAPI, Response, status
+from fastapi import FastAPI
+from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field
 from utils.s3_utils import get_report_url, validate_file
 from utils.rag_utils import get_answer_from_chain_qdrant
@@ -17,7 +18,7 @@ class Question(BaseModel):
     question: str = Field(..., description="Question to be answered")
 
 @app.post("/api/v1/get_report")
-async def get_response(request: Project, response: Response):
+async def get_response(request: Project):
     print("\n=================== Fetching Report ===================\n")
     project_id = request.project_id
     print("Project ID: " + project_id)
@@ -28,13 +29,11 @@ async def get_response(request: Project, response: Response):
     
     if not validate_file(f"{project_id}/"):
         print("Invalid Project ID: " + project_id) # Add a message to indicate that the project ID is invalid
-        response.status_code = status.HTTP_404_NOT_FOUND
-        return {"error": f"Project ID - {project_id} is invalid"}
+        return JSONResponse(status_code=404, content={"error": "Invalid Project ID"})
     
     if not validate_file(file_key):
         print("Report Not Found Project ID: " + project_id) # Add a message to indicate that the report is not yet ready
-        response.status_code = status.HTTP_404_NOT_FOUND
-        return {"error": "Report is not yet ready. Try after sometime."}
+        return JSONResponse(status_code=404, content={"error": "Report Not Found"})
 
     print("file_url: " + str(file_url))
     return {"file_url" : str(file_url)}
