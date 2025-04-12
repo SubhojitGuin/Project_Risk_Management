@@ -37,3 +37,10 @@ def delete_qdrant_collection(collection_name):
         prefer_grpc=True
     )
     qdrant_client.delete_collection(collection_name=collection_name)
+
+if __name__ == "__main__":
+    collection_name = "test_collection"
+    delete_qdrant_collection(collection_name)
+    print("Collection deleted successfully.")
+    # create_qdrant_collection(docs, collection_name)
+    # print("Collection created successfully.")
