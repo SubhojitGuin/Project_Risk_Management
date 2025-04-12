@@ -25,10 +25,14 @@ async def get_response(request:Project):
     # Fetch report url from s3
     file_key = f"{project_id}/report.txt"
     file_url = get_report_url(file_key)
-
-    if not validate_file(file_key):
+    
+    if not validate_file(f"{project_id}/"):
         print("Invalid Project ID: " + project_id) # Add a message to indicate that the project ID is invalid
-        return {"error": "Invalid Project ID"}
+        return {"error": f"Project ID - {project_id} is invalid"}
+    
+    if not validate_file(file_key):
+        print("Report Not Found Project ID: " + project_id) # Add a message to indicate that the report is not yet ready
+        return {"error": "Report is not yet ready. Try after sometime."}
 
     print("file_url: " + str(file_url))
     return {"file_url" : str(file_url)}
