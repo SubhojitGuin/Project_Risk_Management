@@ -17,6 +17,14 @@ class Question(BaseModel):
     project_id: str = Field(..., description="Project ID")
     question: str = Field(..., description="Question to be answered")
 
+@app.get("/")
+async def get_root():
+    return {"message": "Welcome to the AI-Powered Project Risk Analysis API!"}
+
+@app.get("/health")
+async def get_health():
+    return {"status": "ok"}
+
 @app.post("/api/v1/get_report")
 async def get_response(request: Project):
     print("\n=================== Fetching Report ===================\n")
