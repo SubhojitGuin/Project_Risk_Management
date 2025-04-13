@@ -35,7 +35,7 @@ class ProjectRiskAnalysisCrew:
     @task
     def task(self) -> Task:
         return Task(
-            name="Resource Risk Analysis",
+            name="Project Risk Analysis",
             description="""
             Analyze the project's current phase data {project_records} and correlate it with {static_records} to detect risk conditions across the following 17 risk categories:
 

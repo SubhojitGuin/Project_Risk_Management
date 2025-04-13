@@ -16,7 +16,7 @@ def create_qdrant_collection(docs, collection_name):
         docs,
         embeddings,
         url=url,
-        prefer_grpc=True,
+        # prefer_grpc=True,
         api_key=api_key,
         collection_name=collection_name,
     )
@@ -27,16 +27,16 @@ def get_qdrant_collection(collection_name):
         collection_name=collection_name,
         url=url,
         api_key=api_key,
-        prefer_grpc=True
+        # prefer_grpc=True
     )
 
 def delete_qdrant_collection(collection_name):
     qdrant_client = QdrantClient(
         url=url,
-        api_key=api_key,
-        prefer_grpc=True
+        api_key=api_key
     )
     qdrant_client.delete_collection(collection_name=collection_name)
+    qdrant_client.close()
 
 if __name__ == "__main__":
     collection_name = "test_collection"
